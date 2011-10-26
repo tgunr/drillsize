@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import "MainViewController.h"
 
 // used to find existing component labels among UIPicker's children
@@ -32,7 +33,8 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 - (UILabel *)shadedLabelWithText:(NSString *)label ofSize:(CGFloat)pointSize {
     UIFont *font = [UIFont boldSystemFontOfSize:pointSize];
     CGSize size = [label sizeWithFont:font];
-    UILabel *labelView = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)] autorelease];
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UILabel *labelView = [[UILabel alloc] initWithFrame:rect];
     labelView.font = font;
     labelView.adjustsFontSizeToFitWidth = NO;
     labelView.shadowOffset = CGSizeMake(1, 1);
@@ -56,12 +58,13 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 
         label = [self shadedLabelWithText:title ofSize:pointSize];
         CGSize size = label.frame.size;
+        CGRect rect = CGRectMake(0, 0, width, size.height);
         label.frame = CGRectMake(0, 0, offset, size.height);
         label.tag = 1;
         label.textAlignment = UITextAlignmentRight;
         label.autoresizingMask = UIViewAutoresizingFlexibleHeight;
 
-        wrapper = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, width, size.height)] autorelease];
+        wrapper = [[UIView alloc] initWithFrame:rect];
         wrapper.autoresizesSubviews = NO;
         wrapper.userInteractionEnabled = NO;
         [wrapper addSubview:label];
@@ -107,10 +110,10 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     }
     if ([selectionBars count] == n) {
         [selectionBars sortUsingFunction:compareViews context:NULL];
-        selectionBarView = [selectionBars objectAtIndex:component];
+        selectionBarView = [selectionBars objectAtIndex:(NSUInteger) component];
     }
     if (oldLabel != nil) {
-        [UIView beginAnimations:nil context:oldLabel];
+        [UIView beginAnimations:nil context:(__bridge void *) oldLabel];
         [UIView setAnimationDuration:0.25];
         [UIView setAnimationDelegate:self];
         [UIView setAnimationDidStopSelector:@selector(YS_barLabelHideAnimationDidStop:finished:context:)];
@@ -125,7 +128,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
         [self addSubview:labelView];
     if (oldLabel != nil) {
         labelView.alpha = 0.0f;
-        [UIView beginAnimations:nil context:oldLabel];
+        [UIView beginAnimations:nil context:(__bridge void *) oldLabel];
         [UIView setAnimationDuration:0.25];
         [UIView setAnimationDelay:0.25];
         labelView.alpha = normalAlpha;
@@ -160,6 +163,40 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 
 #pragma mark - View lifecycle
 
+- (void)updateDecimalLabel {
+//    NSInteger floor = [self.sizePicker numberOfRowsInComponent:0] - [self.sizePicker selectedRowInComponent:0];
+//    NSString *suffix = @"th";
+//    if (((floor % 100) / 10) != 1) {
+//        switch (floor % 10) {
+//            case 1:  suffix = @"st"; break;
+//            case 2:  suffix = @"nd"; break;
+//            case 3:  suffix = @"rd"; break;
+//        }
+//    }
+//    [self.sizePicker addLabel:[NSString stringWithFormat:@"%@ in", suffix]
+    [self.sizePicker addLabel:@"in"
+                       ofSize:16
+                  toComponent:0
+                leftAlignedAt:80
+baselineAlignedWithFontOfSize:20];
+}
+
+- (void)updateFractionLabel {
+    [self.sizePicker addLabel:@"in"
+                       ofSize:16
+                  toComponent:1
+                leftAlignedAt:60
+baselineAlignedWithFontOfSize:20];
+}
+
+- (void)updateMetricLabel {
+    [self.sizePicker addLabel:@"mm"
+                       ofSize:16
+                  toComponent:2
+                leftAlignedAt:80
+baselineAlignedWithFontOfSize:20];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -182,6 +219,11 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     self.decimalComponent = decimals;
     self.fractionsComponent = fractions;
     self.metricComponent = metrics;
+
+    [self.sizePicker layoutSubviews];
+    [self updateDecimalLabel];
+    [self updateFractionLabel];
+    [self updateMetricLabel];
 }
 
 - (void)viewDidUnload {
@@ -236,6 +278,26 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 }
 
 #pragma mark Picker Delegate Methods
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    CGRect aRect = [pickerView bounds];
+    CGFloat aSize = pickerView.bounds.size.width;
+//    return aSize / 3;
+    switch (component) {
+        case kDecimals:
+            return 100;
+        case kFractions:
+            return 90;
+        case kMetric:
+            return 130;
+        default:
+            return 22;
+    }
+
+    //NOT REACHED
+    return 22;
+
+}
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     switch (component) {
         case kDecimals:
@@ -288,13 +350,6 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     return formattedNumberString;
 }
 
-
-//- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
-//{
-//    if (component == kFractions) {
-//
-//    }
-//}
 #pragma mark - Flipside View Controller
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
