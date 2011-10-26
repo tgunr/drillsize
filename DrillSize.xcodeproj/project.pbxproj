@@ -27,18 +27,18 @@
 		750588FC14577FFD00013A42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		750588FE14577FFD00013A42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7505890014577FFD00013A42 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		7505890414577FFD00013A42 /* DrillSize-Info.plist */ = {isa = PBXFileReference; path = "DrillSize-Info.plist"; sourceTree = "<group>"; };
+		7505890414577FFD00013A42 /* DrillSize-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrillSize-Info.plist"; sourceTree = "<group>"; };
 		7505890614577FFE00013A42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7505890814577FFE00013A42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7505890A14577FFE00013A42 /* DrillSize-Prefix.pch */ = {isa = PBXFileReference; path = "DrillSize-Prefix.pch"; sourceTree = "<group>"; };
-		7505890B14577FFE00013A42 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		7505890A14577FFE00013A42 /* DrillSize-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrillSize-Prefix.pch"; sourceTree = "<group>"; };
+		7505890B14577FFE00013A42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7505890C14577FFE00013A42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7505890F14577FFE00013A42 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		7505891214577FFE00013A42 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		7505891514577FFE00013A42 /* DrillSize.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrillSize.xcdatamodel; sourceTree = "<group>"; };
-		7505891714577FFE00013A42 /* MainViewController.h */ = {isa = PBXFileReference; path = MainViewController.h; sourceTree = "<group>"; };
-		7505891814577FFE00013A42 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		7505891A14577FFE00013A42 /* FlipsideViewController.h */ = {isa = PBXFileReference; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		7505891714577FFE00013A42 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7505891814577FFE00013A42 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		7505891A14577FFE00013A42 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		7505891B14577FFE00013A42 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +140,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "PolyMicro Systems";
 			};
 			buildConfigurationList = 750588F014577FFC00013A42 /* Build configuration list for PBXProject "DrillSize" */;
 			compatibilityVersion = "Xcode 3.2";

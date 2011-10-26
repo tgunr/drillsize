@@ -8,10 +8,18 @@
 
 #import "FlipsideViewController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+#import <UIKit/UIKit.h>
 
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+#define kDecimals 0
+#define kFractions 1
+#define kMetric 2
 
-@property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIVideoEditorControllerDelegate> {
+    NSArray *decimalComponent, *fractionsComponent, *metricComponent;
+}
+@property(weak, nonatomic) IBOutlet UIPickerView *sizePicker;
+@property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property(strong, nonatomic) UIPopoverController *flipsidePopoverController;
+@property(nonatomic, retain) NSArray *decimalComponent, *fractionsComponent, *metricComponent;
 
 @end
