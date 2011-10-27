@@ -6,9 +6,6 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import <CoreGraphics/CoreGraphics.h>
 #import "MainViewController.h"
 
 // used to find existing component labels among UIPicker's children
@@ -144,17 +141,14 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 
 @end
 
-@interface MainViewController ()
-- (IBAction)togglePopover:(id)sender;
-
-@end
-
 @implementation MainViewController
 
 @synthesize sizePicker = _sizePicker;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize flipsidePopoverController = _flipsidePopoverController;
-@synthesize decimalComponent, fractionsComponent, metricComponent;
+@synthesize drillsComponent;
+@synthesize valuesComponent;
+@synthesize metricsComponent;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -174,51 +168,67 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 //        }
 //    }
 //    [self.sizePicker addLabel:[NSString stringWithFormat:@"%@ in", suffix]
-    [self.sizePicker addLabel:@"in"
-                       ofSize:16
+    [self.sizePicker addLabel:@"size"
+                       ofSize:12
                   toComponent:0
-                leftAlignedAt:80
+                leftAlignedAt:65
 baselineAlignedWithFontOfSize:20];
 }
 
 - (void)updateFractionLabel {
     [self.sizePicker addLabel:@"in"
-                       ofSize:16
+                       ofSize:12
                   toComponent:1
-                leftAlignedAt:60
+                leftAlignedAt:67
 baselineAlignedWithFontOfSize:20];
 }
 
 - (void)updateMetricLabel {
     [self.sizePicker addLabel:@"mm"
-                       ofSize:16
+                       ofSize:12
                   toComponent:2
-                leftAlignedAt:80
+                leftAlignedAt:68
 baselineAlignedWithFontOfSize:20];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSArray *array = [[NSArray alloc] initWithObjects:@"1/64", @"1/32", @"3/64", @"1/16", @"5/64", @"3/32", @"7/64", @"1/8", @"9/64", @"5/32", @"11/64", @"3/16", @"13/64", @"7/32", @"15/64", @"1/4", @"17/64", @"9/32", @"19/64", @"5/16", @"21/64", @"11/32", @"23/64", @"3/8", @"25/64", @"13/32", @"27/64", @"7/16", @"29/64", @"15/32", @"31/64", @"1/2", @"33/64", @"17/32", @"35/64", @"9/16", @"37/64", @"19/32", @"39/64", @"5/8", @"41/64", @"21/32", @"43/64", @"11/16", @"45/64", @"23/32", @"47/64", @"3/4", @"49/64", @"25/32", @"51/64", @"13/16", @"53/64", @"27/32", @"55/64", @"7/8", @"57/64", @"29/32", @"59/64", @"15/16", @"61/64", @"31/32", @"63/64", @"1", nil];
-    NSMutableArray *decimals = [NSMutableArray arrayWithCapacity:64];
-    NSMutableArray *fractions = [NSMutableArray arrayWithCapacity:64];
-    NSMutableArray *metrics = [NSMutableArray arrayWithCapacity:64];
-    NSNumber *value;
+    NSArray *drillArray = [[NSArray alloc] initWithObjects:@"80", @"79", @"1/64", @"78", @"77", @"76", @"75", @"74", @"73", @"72", @"71", @"70", @"69", @"68", @"1/32", @"67", @"66", @"65", @"64", @"63", @"62", @"61", @"60", @"59", @"58", @"57", @"56", @"3/64", @"55", @"54", @"53", @"1/16", @"52", @"51", @"50", @"49", @"48", @"5/64", @"47", @"46", @"45", @"44", @"43", @"42", @"3/32", @"41", @"40", @"39", @"38", @"37", @"36", @"7/64", @"35", @"34", @"33", @"32", @"31", @"1/8", @"30", @"29", @"28", @"9/64", @"27", @"26", @"25", @"24", @"23", @"5/32", @"22", @"21", @"20", @"19", @"18", @"11/64", @"17", @"16", @"15", @"14", @"13", @"3/16", @"12", @"11", @"10", @"9", @"8", @"7", @"13/64", @"6", @"5", @"4", @"3", @"7/32", @"2", @"1", @"A", @"15/64", @"B", @"C", @"D", @"1/4", @"E", @"F", @"G", @"17/64", @"H", @"I", @"J", @"K", @"9/32", @"L", @"M", @"19/64", @"N", @"5/16", @"O", @"P", @"21/64", @"Q", @"R", @"11/32", @"S", @"T", @"23/64", @"U", @"3/8", @"V", @"W", @"25/64", @"X", @"Y", @"13/32", @"Z", @"27/64", @"7/16", @"29/64", @"15/32", @"31/64", @"1/2", @"33/64", @"17/32", @"35/64", @"9/16", @"37/64", @"19/32", @"39/64", @"5/8", @"41/64", @"21/32", @"43/64", @"11/16", @"45/64", @"23/32", @"47/64", @"3/4", @"49/64", @"25/32", @"51/64", @"13/16", @"53/64", @"27/32", @"55/64", @"7/8", @"57/64", @"29/32", @"59/64", @"15/16", @"61/64", @"31/32", @"63/64", @"1", nil];
+
+    NSDictionary *sizeDict = [NSDictionary dictionaryWithObjectsAndKeys:@".0135", @"80", @".0145", @"79", @".0160", @"78", @".0180", @"77", @".0200", @"76", @".0210", @"75", @".0225", @"74", @".0240", @"73", @".0250", @"72", @".0260", @"71", @".0280", @"70", @".0292", @"69", @".0310", @"68", @".0320", @"67", @".0330", @"66", @".0350", @"65", @".0360", @"64", @".0370", @"63", @".0380", @"62", @".0390", @"61", @".0400", @"60", @".0410", @"59", @".0420", @"58", @".0430", @"57", @".0465", @"56", @".0520", @"55", @".0550", @"54", @".0595", @"53", @".0635", @"52", @".0670", @"51", @".0700", @"50", @".0730", @"49", @".0760", @"48", @".0785", @"47", @".0810", @"46", @".0820", @"45", @".0860", @"44", @".0890", @"43", @".0935", @"42", @".0960", @"41", @".0980", @"40", @".0995", @"39", @".1015", @"38", @".1040", @"37", @".1065", @"36", @".1100", @"35", @".1110", @"34", @".1130", @"33", @".1160", @"32", @".1200", @"31", @".1285", @"30", @".1360", @"29", @".1405", @"28", @".1440", @"27", @".1470", @"26", @".1495", @"25", @".1520", @"24", @".1540", @"23", @".1570", @"22", @".1590", @"21", @".1610", @"20", @".1660", @"19", @".1695", @"18", @".1730", @"17", @".1770", @"16", @".1800", @"15", @".1820", @"14", @".1850", @"13", @".1890", @"12", @".1910", @"11", @".1935", @"10", @".1960", @"9", @".1990", @"8", @".2010", @"7", @".2040", @"6", @".2055", @"5", @".2090", @"4", @".2130", @"3", @".2210", @"2", @".2280", @"1", @".2340", @"A", @".2380", @"B", @".2420", @"C", @"2460", @"D", @".2500", @"E", @".2570", @"F", @".2610", @"G", @".2660", @"H", @".2720", @"I", @".2770", @"J", @".2810", @"K", @".2900", @"L", @".2950", @"M", @".3020", @"N", @".3160", @"O", @".3230", @"P", @".3320", @"Q", @".3390", @"R", @".3480", @"S", @".3580", @"T", @".3680", @"U", @".3770", @"V", @"3860", @"W", @".3970", @"X", @".4040", @"Y", @".4130", @"Z", nil];
+    NSMutableArray *sizeStringArray = [NSMutableArray arrayWithCapacity:128];
+    NSMutableArray *valueNumberArray = [NSMutableArray arrayWithCapacity:128];
+    NSMutableArray *metricNumberArray = [NSMutableArray arrayWithCapacity:128];
+    NSNumber *dValue;
     NSNumber *metric;
-    float mm = (float) 25.4 / (float) 64;
-    int z = 0;
-    for (float i = 64; i > 0; i--) {
-        value = [NSNumber numberWithFloat:(float) 1 / i];
-        [decimals addObject:value];
-        [fractions addObject:[array objectAtIndex:(NSUInteger) z++]];
-        metric = [NSNumber numberWithFloat:z * mm];
-        [metrics addObject:metric];
+    float mm = (float) .039705;
+    for (NSString *dsize in drillArray) {
+        NSArray *dArray = [dsize componentsSeparatedByString:@"/"];
+        NSInteger dArraySize = [dArray count];
+        if (dArraySize == 1) {
+            NSString *dKey = [dArray objectAtIndex:0];
+            NSString *dValueStr = [sizeDict objectForKey:dKey];
+            dValue = [NSNumber numberWithFloat:[dValueStr floatValue]];
+            [sizeDict objectForKey:dKey];
+            [sizeStringArray addObject:dKey];
+            [valueNumberArray addObject:dValue];
+        } else {
+            [sizeStringArray addObject:dsize];
+            CGFloat num = [[dArray objectAtIndex:0] floatValue];
+            CGFloat dem = [[dArray objectAtIndex:1] floatValue];
+            CGFloat demValue = num / dem;
+            dValue = [NSNumber numberWithFloat:demValue];
+            [valueNumberArray addObject:[dValue stringValue]];
+        }
+        metric = [NSNumber numberWithFloat:[dValue floatValue] / mm];
+        [metricNumberArray addObject:metric];
     }
 
-    self.decimalComponent = decimals;
-    self.fractionsComponent = fractions;
-    self.metricComponent = metrics;
+    drillsComponent = sizeStringArray;
+    NSLog(@"drillsComponent: %d", [drillsComponent count]);
+    valuesComponent = valueNumberArray;
+    metricsComponent = metricNumberArray;
 
     [self.sizePicker layoutSubviews];
     [self updateDecimalLabel];
@@ -265,13 +275,14 @@ baselineAlignedWithFontOfSize:20];
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+//    NSLog(@"drillsComponent: %d", [drillsComponent count]);
     switch (component) {
-        case kDecimals:
-            return [decimalComponent count];
-        case kFractions:
-            return [fractionsComponent count];
-        case kMetric:
-            return [metricComponent count];
+        case kSizes:
+            return [drillsComponent count];
+        case kValues:
+            return [valuesComponent count];
+        case kMetrics:
+            return [metricsComponent count];
         default:
             return 0;
     }
@@ -279,77 +290,80 @@ baselineAlignedWithFontOfSize:20];
 
 #pragma mark Picker Delegate Methods
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-    CGRect aRect = [pickerView bounds];
-    CGFloat aSize = pickerView.bounds.size.width;
+//    CGRect aRect = [pickerView bounds];
+//    CGFloat aSize = pickerView.bounds.size.width;
 //    return aSize / 3;
     switch (component) {
-        case kDecimals:
+        case kSizes:
             return 100;
-        case kFractions:
+        case kValues:
             return 90;
-        case kMetric:
-            return 130;
+        case kMetrics:
+            return 100;
         default:
-            return 22;
+            return 100;
     }
-
-    //NOT REACHED
-    return 22;
-
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     switch (component) {
-        case kDecimals:
+        case kSizes:
         {
-            [pickerView selectRow:row inComponent:kFractions animated:YES];
-            [pickerView selectRow:row inComponent:kMetric animated:YES];
+            [pickerView selectRow:row inComponent:kValues animated:YES];
+            [pickerView selectRow:row inComponent:kMetrics animated:YES];
             break;
         }
-        case kFractions:
-            [pickerView selectRow:row inComponent:kDecimals animated:YES];
-            [pickerView selectRow:row inComponent:kMetric animated:YES];
+        case kValues:
+            [pickerView selectRow:row inComponent:kSizes animated:YES];
+            [pickerView selectRow:row inComponent:kMetrics animated:YES];
             break;
-        case kMetric:
+        case kMetrics:
         {
-            [pickerView selectRow:row inComponent:kFractions animated:YES];
-            [pickerView selectRow:row inComponent:kDecimals animated:YES];
+            [pickerView selectRow:row inComponent:kValues animated:YES];
+            [pickerView selectRow:row inComponent:kSizes animated:YES];
             break;
         }
     }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     NSString *formattedNumberString = @"NaN";
-    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [numberFormatter setMaximumFractionDigits:4];
-    [numberFormatter setMaximumFractionDigits:4];
-    [numberFormatter setPaddingCharacter:@"0"];
-    [numberFormatter setPaddingPosition:NSNumberFormatterPadAfterSuffix];
     switch (component) {
-        case kDecimals:
+        case kSizes:
         {
-            NSNumber *decimal = [decimalComponent objectAtIndex:(NSUInteger) row];
-            formattedNumberString = [NSString stringWithString:[numberFormatter stringFromNumber:decimal]];
+            formattedNumberString = [drillsComponent objectAtIndex:(NSUInteger) row];
             break;
         }
-        case kFractions:
+        case kValues:
         {
-            formattedNumberString = [fractionsComponent objectAtIndex:(NSUInteger) row];
-        }
+            NSNumber *decValue = [valuesComponent objectAtIndex:(NSUInteger) row];
+            formattedNumberString = [[NSString stringWithFormat:@"%.4lf", [decValue floatValue]] substringFromIndex:1];
             break;
-        case kMetric:
+        }
+        case kMetrics:
         {
-            NSNumber *metric = [metricComponent objectAtIndex:(NSUInteger) row];
-            formattedNumberString = [NSString stringWithString:[numberFormatter stringFromNumber:metric]];
-        }
+            NSNumber *metric = [metricsComponent objectAtIndex:(NSUInteger) row];
+            formattedNumberString = [NSString stringWithFormat:@"%.4lf", [metric floatValue]];
             break;
+        }
     }
     NSLog(@"titleForRow: %@", formattedNumberString);
     return formattedNumberString;
 }
 
+//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+//	{
+//		UILabel* tView = (UILabel*)view;
+//		if (!tView){
+//			tView = [[UILabel alloc] init];
+//			tView.font = [UIFont systemFontOfSize:16];
+//            // Setup label properties - frame, font, colors etc
+//		}
+//		tView.text = @"NaN";
+//		// Fill the label text here
+//		return tView;
+//	}
+//	
 #pragma mark - Flipside View Controller
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {

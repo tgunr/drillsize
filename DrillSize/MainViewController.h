@@ -15,7 +15,6 @@
 #define kDatePickerTitleFontSize 25.0f
 #define kDatePickerLabelFontSize 21.0f
 
-
 @interface UIPickerView (SelectionBarLabelSupport)
 
 // The primary API to add a label to the given component.
@@ -24,7 +23,7 @@
 // Repeated calls will change the label with an animation effect similar to UIDatePicker's one.
 //
 // To call this method on viewDidLoad, please call [pickerView layoutSubviews] first so that all subviews
-// get created.
+// drillSizesComponent created.
 - (void)addLabel:(NSString *)label ofSize:(CGFloat)pointSize toComponent:(NSInteger)component leftAlignedAt:(CGFloat)offset baselineAlignedWithFontOfSize:(CGFloat)titlePointSize;
 
 // A helper method for your delegate's "pickerView:viewForRow:forComponent:reusingView:".
@@ -37,16 +36,24 @@
 
 @end
 
-#define kDecimals 0
-#define kFractions 1
-#define kMetric 2
+#define kSizes 0
+#define kValues 1
+#define kMetrics 2
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIVideoEditorControllerDelegate> {
-    NSArray *decimalComponent, *fractionsComponent, *metricComponent;
+    NSArray *drillsComponent;
+    NSArray *valuesComponent;
+    NSArray *metricsComponent;
 }
 @property(weak, nonatomic) IBOutlet UIPickerView *sizePicker;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property(strong, nonatomic) UIPopoverController *flipsidePopoverController;
-@property(nonatomic, retain) NSArray *decimalComponent, *fractionsComponent, *metricComponent;
 
+@property(copy) NSArray *drillsComponent;
+@property(copy) NSArray *valuesComponent;
+@property(copy) NSArray *metricsComponent;
+
+- (IBAction)togglePopover:(id)sender;
 @end
+
+
