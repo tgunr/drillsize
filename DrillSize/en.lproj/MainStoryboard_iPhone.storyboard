@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="10">
-                                <rect key="frame" x="293" y="5" width="18" height="19"/>
+                                <rect key="frame" x="288" y="370" width="18" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal">
@@ -48,14 +48,14 @@
                                 </connections>
                             </adBannerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Decimal/Metric Equivilent Drill Sizes " textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="ZCV-cG-wIW">
-                                <rect key="frame" x="20" y="32" width="286" height="20"/>
+                                <rect key="frame" x="20" y="20" width="286" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" red="0.62745100259780884" green="0.65882354974746704" blue="0.78039222955703735" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hAf-5n-Vh1">
-                                <rect key="frame" x="72" y="285" width="183" height="46"/>
+                                <rect key="frame" x="20" y="295" width="100" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" image="mm-inch.png">
@@ -70,7 +70,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vcs-VJ-Cim">
-                                <rect key="frame" x="72" y="354" width="183" height="37"/>
+                                <rect key="frame" x="206" y="295" width="100" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="Us_drill_sizes_2.png">
@@ -146,33 +146,25 @@ Select a decimal size or metric size to view which drill size to use.
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="g55-wG-pSY">
-                                <rect key="frame" x="80" y="44" width="160" height="416"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" directionalLockEnabled="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" minimumZoomScale="-2" id="uVJ-Ic-CqR">
+                                <rect key="frame" x="0.0" y="-392" width="320" height="1244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uVJ-Ic-CqR">
-                                        <rect key="frame" x="-37" y="-410" width="234" height="1244"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <subviews>
-                                            <imageView contentMode="scaleAspectFill" image="mm-inch.png" id="BnC-Gs-DDm">
-                                                <rect key="frame" x="20" y="20" width="190" height="1200"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                            </imageView>
-                                        </subviews>
-                                        <connections>
-                                            <outlet property="delegate" destination="729-gP-wpQ" id="1rB-FU-5Nz"/>
-                                        </connections>
-                                    </scrollView>
+                                    <imageView contentMode="scaleAspectFill" image="mm-inch.png" id="BnC-Gs-DDm">
+                                        <rect key="frame" x="-441" y="520" width="1203" height="203"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                                <connections>
+                                    <outlet property="delegate" destination="729-gP-wpQ" id="GL2-ae-ujI"/>
+                                </connections>
+                            </scrollView>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="qg7-2I-MxH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="mm/inch" id="5xu-Nn-KKr">
-                                        <barButtonItem key="backBarButtonItem" title="Back" id="uKp-qg-Nxg"/>
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="TY0-70-oW6">
                                             <connections>
                                                 <action selector="finish:" destination="729-gP-wpQ" id="A3D-Po-qzf"/>
@@ -185,6 +177,10 @@ Select a decimal size or metric size to view which drill size to use.
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="R0n-i3-BGd"/>
+                    <connections>
+                        <outlet property="imageScrollView" destination="uVJ-Ic-CqR" id="9L8-ue-WI5"/>
+                        <outlet property="imageView" destination="BnC-Gs-DDm" id="R3D-Wj-giu"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="601" y="37"/>
@@ -192,7 +188,7 @@ Select a decimal size or metric size to view which drill size to use.
     </scenes>
     <resources>
         <image name="Us_drill_sizes_2.png" width="720" height="395"/>
-        <image name="mm-inch.png" width="203" height="1203"/>
+        <image name="mm-inch.png" width="1203" height="203"/>
     </resources>
     <classes>
         <class className="FlipsideViewController" superclassName="UIViewController">
@@ -206,6 +202,8 @@ Select a decimal size or metric size to view which drill size to use.
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InchMMViewController.h"/>
             <relationships>
                 <relationship kind="action" name="finish:"/>
+                <relationship kind="outlet" name="imageScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="TapDetectingImageView"/>
             </relationships>
         </class>
         <class className="MainViewController" superclassName="UIViewController">
@@ -215,6 +213,9 @@ Select a decimal size or metric size to view which drill size to use.
                 <relationship kind="outlet" name="adBannerView" candidateClass="ADBannerView"/>
                 <relationship kind="outlet" name="sizePicker" candidateClass="UIPickerView"/>
             </relationships>
+        </class>
+        <class className="TapDetectingImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TapDetectingImageView.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

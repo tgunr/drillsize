@@ -24,7 +24,6 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
         return 0;
 }
 
-
 @implementation UIPickerView (SelectionBarLabelSupport)
 
 - (UILabel *)shadedLabelWithText:(NSString *)label ofSize:(CGFloat)pointSize {
@@ -386,9 +385,11 @@ baselineAlignedWithFontOfSize:20];
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 //    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
-        [[segue destinationViewController] setDelegate:self];
-
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    id aController = [segue destinationViewController];
+    [aController setDelegate:self];
+        
+    UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
+        if ( idiom == UIUserInterfaceIdiomPad) {
             UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *) segue popoverController];
             self.flipsidePopoverController = popoverController;
             popoverController.delegate = self;
