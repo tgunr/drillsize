@@ -21,3 +21,9 @@
 - (IBAction)done:(id)sender;
 
 @end
+
+@interface InchMMViewController : FlipsideViewController
+
+- (IBAction)finish:(id)sender;
+
+@end

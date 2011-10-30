@@ -3,7 +3,7 @@
 //  DrillSize
 //
 //  Created by Dave Carlton on 10/25/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 PolyMicro Systems. All rights reserved.
 //
 
 #import "FlipsideViewController.h"
@@ -32,6 +32,7 @@
 - (UIView *)viewForShadedLabelWithText:(NSString *)label ofSize:(CGFloat)pointSize forComponent:(NSInteger)component rightAlignedAt:(CGFloat)offset reusingView:(UIView *)view;
 
 // Creates a shaded label of the given size, looking similar to the labels used by UIPickerView/UIDatePicker.
+
 - (UILabel *)shadedLabelWithText:(NSString *)label ofSize:(CGFloat)pointSize;
 
 @end

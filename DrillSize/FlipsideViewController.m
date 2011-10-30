@@ -77,3 +77,14 @@
 }
 
 @end
+
+@implementation InchMMViewController
+
+- (IBAction)finish:(id)sender
+{
+    [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+@end
+
+
