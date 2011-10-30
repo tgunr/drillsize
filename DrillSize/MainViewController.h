@@ -9,6 +9,7 @@
 #import "FlipsideViewController.h"
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
 // useful constants for your font size-related code
 #define kPickerViewDefaultTitleFontSize 20.0f
@@ -41,14 +42,16 @@
 #define kValues 1
 #define kMetrics 2
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIVideoEditorControllerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIVideoEditorControllerDelegate, ADBannerViewDelegate> {
     NSArray *drillsComponent;
     NSArray *valuesComponent;
     NSArray *metricsComponent;
 }
+@property (nonatomic) BOOL bannerIsVisible;
 @property(weak, nonatomic) IBOutlet UIPickerView *sizePicker;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property(strong, nonatomic) UIPopoverController *flipsidePopoverController;
+@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 
 @property(copy) NSArray *drillsComponent;
 @property(copy) NSArray *valuesComponent;
