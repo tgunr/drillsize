@@ -11,6 +11,7 @@
 @implementation FlipsideViewController
 
 @synthesize delegate = _delegate;
+@synthesize mainViewController;
 
 - (void)awakeFromNib
 {
@@ -77,3 +78,14 @@
 }
 
 @end
+
+@implementation InchMMViewController
+
+- (IBAction)finish:(id)sender
+{
+    [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+@end
+
+
