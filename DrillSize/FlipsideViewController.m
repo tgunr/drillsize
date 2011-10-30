@@ -11,6 +11,7 @@
 @implementation FlipsideViewController
 
 @synthesize delegate = _delegate;
+@synthesize mainViewController;
 
 - (void)awakeFromNib
 {

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class FlipsideViewController;
+@class MainViewController;
 
 @protocol FlipsideViewControllerDelegate
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
@@ -17,6 +18,7 @@
 @interface FlipsideViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate> delegate;
+@property (strong) MainViewController *mainViewController;
 
 - (IBAction)done:(id)sender;
 

@@ -146,9 +146,11 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 @synthesize sizePicker = _sizePicker;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize flipsidePopoverController = _flipsidePopoverController;
+@synthesize adBannerView;
 @synthesize drillsComponent;
 @synthesize valuesComponent;
 @synthesize metricsComponent;
+@synthesize bannerIsVisible;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -234,10 +236,12 @@ baselineAlignedWithFontOfSize:20];
     [self updateDecimalLabel];
     [self updateFractionLabel];
     [self updateMetricLabel];
+	self.bannerIsVisible = YES;
 }
 
 - (void)viewDidUnload {
     [self setSizePicker:nil];
+	[self setAdBannerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -381,7 +385,7 @@ baselineAlignedWithFontOfSize:20];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
+//    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
 
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -389,7 +393,7 @@ baselineAlignedWithFontOfSize:20];
             self.flipsidePopoverController = popoverController;
             popoverController.delegate = self;
         }
-    }
+//    }
 }
 
 - (IBAction)togglePopover:(id)sender {
@@ -401,4 +405,39 @@ baselineAlignedWithFontOfSize:20];
     }
 }
 
+#pragma mark - Banner Delegate
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    if (!self.bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+		// Assumes the banner view is just off the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+        [UIView commitAnimations];
+        self.bannerIsVisible = YES;
+    }
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+	if (self.bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+		// Assumes the banner view is placed at the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
+        [UIView commitAnimations];
+        self.bannerIsVisible = NO;
+    }
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    NSLog(@"Banner view is beginning an ad action");
+    BOOL shouldExecuteAction = YES; //[self allowActionToRun]; // your application implements this method
+    if (!willLeave && shouldExecuteAction)
+    {
+        // insert code here to suspend any services that might conflict with the advertisement
+    }
+    return shouldExecuteAction;
+}
 @end

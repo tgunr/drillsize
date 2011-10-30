@@ -48,8 +48,8 @@
 		7505891814577FFE00013A42 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7505891A14577FFE00013A42 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		7505891B14577FFE00013A42 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
-		75D0832B145B26E00094E89E /* bit-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bit-57X57.png"; sourceTree = "<group>"; };
-		75D0832D145B26E70094E89E /* bit-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bit-114X114.png"; sourceTree = "<group>"; };
+		75D0832B145B26E00094E89E /* bit-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-57X57.png"; path = "../bit-57X57.png"; sourceTree = "<group>"; };
+		75D0832D145B26E70094E89E /* bit-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-114X114.png"; path = "../bit-114X114.png"; sourceTree = "<group>"; };
 		75D0832F145B353B0094E89E /* mm-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm-inch.png"; sourceTree = "<group>"; };
 		75D08331145B35640094E89E /* Us_drill_sizes_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Us_drill_sizes_2.png; sourceTree = "<group>"; };
 		75F54B5F1459280100EC50C7 /* drillbit-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "drillbit-114.png"; path = "../drillbit-114.png"; sourceTree = "<group>"; };
@@ -78,8 +78,6 @@
 		750588EB14577FFC00013A42 = {
 			isa = PBXGroup;
 			children = (
-				75D0832D145B26E70094E89E /* bit-114X114.png */,
-				75D0832B145B26E00094E89E /* bit-57X57.png */,
 				7505890214577FFD00013A42 /* DrillSize */,
 				750588F914577FFD00013A42 /* Frameworks */,
 				750588F714577FFD00013A42 /* Products */,
@@ -126,6 +124,8 @@
 		7505890314577FFD00013A42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				75D0832B145B26E00094E89E /* bit-57X57.png */,
+				75D0832D145B26E70094E89E /* bit-114X114.png */,
 				75D08331145B35640094E89E /* Us_drill_sizes_2.png */,
 				75D0832F145B353B0094E89E /* mm-inch.png */,
 				75F54B6714592EF800EC50C7 /* drillbit-57.png */,
