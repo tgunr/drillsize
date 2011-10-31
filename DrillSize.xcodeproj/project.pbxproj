@@ -19,6 +19,8 @@
 		7505891614577FFE00013A42 /* DrillSize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */; };
 		7505891914577FFE00013A42 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891814577FFE00013A42 /* MainViewController.m */; };
 		7505891C14577FFE00013A42 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891B14577FFE00013A42 /* FlipsideViewController.m */; };
+		755424E1145F2FB400CAF46D /* size-diam.png in Resources */ = {isa = PBXBuildFile; fileRef = 755424E0145F2FB400CAF46D /* size-diam.png */; };
+		755424E4145F30A100CAF46D /* sizes.png in Resources */ = {isa = PBXBuildFile; fileRef = 755424E3145F30A100CAF46D /* sizes.png */; };
 		757FF8DD145E7A6D001D3F78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */; };
 		75D0832A145B26D80094E89E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F54B631459283400EC50C7 /* Default.png */; };
 		75D0832C145B26E00094E89E /* bit-57X57.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D0832B145B26E00094E89E /* bit-57X57.png */; };
@@ -51,6 +53,8 @@
 		7505891814577FFE00013A42 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7505891A14577FFE00013A42 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		7505891B14577FFE00013A42 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		755424E0145F2FB400CAF46D /* size-diam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "size-diam.png"; sourceTree = "<group>"; };
+		755424E3145F30A100CAF46D /* sizes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sizes.png; sourceTree = "<group>"; };
 		757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		75D0832B145B26E00094E89E /* bit-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-57X57.png"; path = "../bit-57X57.png"; sourceTree = "<group>"; };
 		75D0832D145B26E70094E89E /* bit-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-114X114.png"; path = "../bit-114X114.png"; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 		7505890314577FFD00013A42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				755424E3145F30A100CAF46D /* sizes.png */,
+				755424E0145F2FB400CAF46D /* size-diam.png */,
 				75D0832B145B26E00094E89E /* bit-57X57.png */,
 				75D0832D145B26E70094E89E /* bit-114X114.png */,
 				75D08331145B35640094E89E /* Us_drill_sizes_2.png */,
@@ -215,6 +221,8 @@
 				75D0832E145B26E70094E89E /* bit-114X114.png in Resources */,
 				75D08330145B353B0094E89E /* mm-inch.png in Resources */,
 				75D08332145B35640094E89E /* Us_drill_sizes_2.png in Resources */,
+				755424E1145F2FB400CAF46D /* size-diam.png in Resources */,
+				755424E4145F30A100CAF46D /* sizes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

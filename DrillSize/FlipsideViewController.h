@@ -43,3 +43,10 @@
 @property (strong, nonatomic) IBOutletCollection(UIPinchGestureRecognizer) NSArray *pinch;
 
 @end
+
+@interface SizeMMViewController : FlipsideViewController <UIScrollViewDelegate, TapDetectingImageViewDelegate>
+@property (weak, nonatomic) IBOutlet TapDetectingImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
+- (IBAction)finish:(id)sender;
+
+@end
