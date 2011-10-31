@@ -65,20 +65,6 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DrillSize/FlipsideViewController.m"
-         timestampString = "341709438.078936"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
-         landmarkName = "-done:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "DrillSize/FlipsideViewController.m"
          timestampString = "341712598.481777"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"

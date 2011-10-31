@@ -19,6 +19,7 @@
 		7505891614577FFE00013A42 /* DrillSize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */; };
 		7505891914577FFE00013A42 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891814577FFE00013A42 /* MainViewController.m */; };
 		7505891C14577FFE00013A42 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891B14577FFE00013A42 /* FlipsideViewController.m */; };
+		757FF8DD145E7A6D001D3F78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */; };
 		75D0832A145B26D80094E89E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F54B631459283400EC50C7 /* Default.png */; };
 		75D0832C145B26E00094E89E /* bit-57X57.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D0832B145B26E00094E89E /* bit-57X57.png */; };
 		75D0832E145B26E70094E89E /* bit-114X114.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D0832D145B26E70094E89E /* bit-114X114.png */; };
@@ -50,6 +51,7 @@
 		7505891814577FFE00013A42 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7505891A14577FFE00013A42 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		7505891B14577FFE00013A42 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		75D0832B145B26E00094E89E /* bit-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-57X57.png"; path = "../bit-57X57.png"; sourceTree = "<group>"; };
 		75D0832D145B26E70094E89E /* bit-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-114X114.png"; path = "../bit-114X114.png"; sourceTree = "<group>"; };
 		75D0832F145B353B0094E89E /* mm-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm-inch.png"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757FF8DD145E7A6D001D3F78 /* QuartzCore.framework in Frameworks */,
 				750588FB14577FFD00013A42 /* UIKit.framework in Frameworks */,
 				750588FD14577FFD00013A42 /* Foundation.framework in Frameworks */,
 				750588FF14577FFD00013A42 /* CoreGraphics.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		750588F914577FFD00013A42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */,
 				75F54B6714592EF800EC50C8 /* iAd.framework */,
 				750588FA14577FFD00013A42 /* UIKit.framework */,
 				750588FC14577FFD00013A42 /* Foundation.framework */,

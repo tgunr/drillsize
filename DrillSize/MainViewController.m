@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 // used to find existing component labels among UIPicker's children
 #define kMagicTag 89464534
@@ -146,6 +147,8 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize flipsidePopoverController = _flipsidePopoverController;
 @synthesize adBannerView;
+@synthesize mmInchButton;
+@synthesize mmSizeButton;
 @synthesize drillsComponent;
 @synthesize valuesComponent;
 @synthesize metricsComponent;
@@ -235,12 +238,20 @@ baselineAlignedWithFontOfSize:20];
     [self updateDecimalLabel];
     [self updateFractionLabel];
     [self updateMetricLabel];
-	self.bannerIsVisible = YES;
+    self.bannerIsVisible = YES;
+
+    mmInchButton.layer.cornerRadius = 8;
+    mmInchButton.layer.masksToBounds = YES;
+
+    mmSizeButton.layer.cornerRadius = 8;
+    mmSizeButton.layer.masksToBounds = YES;
 }
 
 - (void)viewDidUnload {
     [self setSizePicker:nil];
-	[self setAdBannerView:nil];
+    [self setAdBannerView:nil];
+    [self setMmInchButton:nil];
+    [self setMmSizeButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -387,13 +398,13 @@ baselineAlignedWithFontOfSize:20];
 //    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
     id aController = [segue destinationViewController];
     [aController setDelegate:self];
-        
+
     UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
-        if ( idiom == UIUserInterfaceIdiomPad) {
-            UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *) segue popoverController];
-            self.flipsidePopoverController = popoverController;
-            popoverController.delegate = self;
-        }
+    if (idiom == UIUserInterfaceIdiomPad) {
+        UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *) segue popoverController];
+        self.flipsidePopoverController = popoverController;
+        popoverController.delegate = self;
+    }
 //    }
 }
 
@@ -407,36 +418,30 @@ baselineAlignedWithFontOfSize:20];
 }
 
 #pragma mark - Banner Delegate
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-    if (!self.bannerIsVisible)
-    {
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    if (!self.bannerIsVisible) {
         [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-		// Assumes the banner view is just off the bottom of the screen.
+        // Assumes the banner view is just off the bottom of the screen.
         banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
         [UIView commitAnimations];
         self.bannerIsVisible = YES;
     }
 }
 
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-	if (self.bannerIsVisible)
-    {
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    if (self.bannerIsVisible) {
         [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
-		// Assumes the banner view is placed at the bottom of the screen.
+        // Assumes the banner view is placed at the bottom of the screen.
         banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
         [UIView commitAnimations];
         self.bannerIsVisible = NO;
     }
 }
 
-- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
-{
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
     NSLog(@"Banner view is beginning an ad action");
     BOOL shouldExecuteAction = YES; //[self allowActionToRun]; // your application implements this method
-    if (!willLeave && shouldExecuteAction)
-    {
+    if (!willLeave && shouldExecuteAction) {
         // insert code here to suspend any services that might conflict with the advertisement
     }
     return shouldExecuteAction;

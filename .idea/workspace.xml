@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0b9b09f-ca31-46f2-b0be-7f57364d5fba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Default@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DrillSize/Us_drill_sizes_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DrillSize/mm-inch.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bit-114X114.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bit-57X57.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/drillbit-114.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/drillbit-57.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize.xcodeproj/project.xcworkspace/xcuserdata/davec.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/DrillSize.xcodeproj/project.xcworkspace/xcuserdata/davec.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize.xcodeproj/xcuserdata/davec.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" afterPath="$PROJECT_DIR$/DrillSize.xcodeproj/xcuserdata/davec.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/DrillSize.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize/DrillSize-Info.plist" afterPath="$PROJECT_DIR$/DrillSize/DrillSize-Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize/FlipsideViewController.h" afterPath="$PROJECT_DIR$/DrillSize/FlipsideViewController.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize/FlipsideViewController.m" afterPath="$PROJECT_DIR$/DrillSize/FlipsideViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize/MainViewController.h" afterPath="$PROJECT_DIR$/DrillSize/MainViewController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize/MainViewController.m" afterPath="$PROJECT_DIR$/DrillSize/MainViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPhone.storyboard" afterPath="$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPhone.storyboard" />
@@ -37,82 +28,6 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="DrillSize" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="AppDelegate.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DrillSize/AppDelegate.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="62" selection-start="4119" selection-end="4119" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FlipsideViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DrillSize/FlipsideViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="12" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FlipsideViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DrillSize/FlipsideViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="19" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DrillSize/main.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Info.plist" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/Debug-iphoneos/DrillSize.app.dSYM/Contents/Info.plist">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="32" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DrillSize-Prefix.pch" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DrillSize/DrillSize-Prefix.pch">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="18" selection-start="346" selection-end="346" vertical-scroll-proportion="0.30660376">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="328" column="32" selection-start="14693" selection-end="14693" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainViewController.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -377,12 +292,12 @@
     <frame x="0" y="22" width="1920" height="1174" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32889733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940108" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940108" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18924618" sideWeight="0.22908746" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18924618" sideWeight="0.6330798" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36692014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15076436" sideWeight="0.67110264" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36692014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999474" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34440228" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -402,8 +317,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
@@ -430,7 +345,7 @@
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="New row setup, now drill size are combined with fractional sizes.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="mmInch view now functional.&#10;Added rounded corners to buttons." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -447,6 +362,7 @@
     <MESSAGE value="The three columns are now working.&#10;Adding label support class." />
     <MESSAGE value="Added labels." />
     <MESSAGE value="New row setup, now drill size are combined with fractional sizes.&#10;" />
+    <MESSAGE value="mmInch view now functional.&#10;Added rounded corners to buttons." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -473,9 +389,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DrillSize/main.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="7" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DrillSize/FlipsideViewController.m">
@@ -499,9 +413,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DrillSize/DrillSize-Prefix.pch">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="18" selection-start="346" selection-end="346" vertical-scroll-proportion="0.30660376">
-          <folding />
-        </state>
+        <state line="15" column="18" selection-start="346" selection-end="346" vertical-scroll-proportion="0.30660376" />
       </provider>
     </entry>
   </component>
