@@ -51,7 +51,6 @@
 
 
 @interface ThumbImageView : UIImageView {
-    id <ThumbImageViewDelegate> delegate;
     NSString *imageName;
     
     /* ThumbImageViews have a "home," which is their location in the containing scroll view. Keeping this distinct */
@@ -64,7 +63,7 @@
     CGPoint touchLocation; // Location of touch in own coordinates (stays constant during dragging).
 }
 
-@property (nonatomic, assign) id <ThumbImageViewDelegate> delegate;
+@property (nonatomic, weak) id <ThumbImageViewDelegate> delegate;
 @property (nonatomic, retain) NSString *imageName;
 @property (nonatomic, assign) CGRect home;
 @property (nonatomic, assign) CGPoint touchLocation;

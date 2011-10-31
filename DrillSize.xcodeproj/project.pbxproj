@@ -28,6 +28,7 @@
 		75F54B601459280100EC50C7 /* drillbit-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F54B5F1459280100EC50C7 /* drillbit-114.png */; };
 		75F54B6714592EF800EC50C9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F54B6714592EF800EC50C8 /* iAd.framework */; };
 		75FB5011145DFD8C00704822 /* TapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB5010145DFD8C00704822 /* TapDetectingImageView.m */; };
+		75FB501A145E145700704822 /* ThumbImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB5019145E145600704822 /* ThumbImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		75F54B6714592EF800EC50C8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		75FB500F145DFD8C00704822 /* TapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingImageView.h; sourceTree = "<group>"; };
 		75FB5010145DFD8C00704822 /* TapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapDetectingImageView.m; sourceTree = "<group>"; };
+		75FB5018145E145600704822 /* ThumbImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbImageView.h; sourceTree = "<group>"; };
+		75FB5019145E145600704822 /* ThumbImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				7505891B14577FFE00013A42 /* FlipsideViewController.m */,
 				75FB500F145DFD8C00704822 /* TapDetectingImageView.h */,
 				75FB5010145DFD8C00704822 /* TapDetectingImageView.m */,
+				75FB5018145E145600704822 /* ThumbImageView.h */,
+				75FB5019145E145600704822 /* ThumbImageView.m */,
 				7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */,
 				7505890314577FFD00013A42 /* Supporting Files */,
 			);
@@ -222,6 +227,7 @@
 				7505891914577FFE00013A42 /* MainViewController.m in Sources */,
 				7505891C14577FFE00013A42 /* FlipsideViewController.m in Sources */,
 				75FB5011145DFD8C00704822 /* TapDetectingImageView.m in Sources */,
+				75FB501A145E145700704822 /* ThumbImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

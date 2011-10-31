@@ -96,12 +96,23 @@
 @end
 
 @implementation InchMMViewController
+@synthesize pinch;
 @synthesize imageView;
 @synthesize imageScrollView;
 
 - (IBAction)finish:(id)sender
 {
     [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+- (IBAction)singleTap:(id)sender {
+}
+
+- (IBAction)doubleTap:(id)sender {
+    
+}
+
+- (IBAction)pinch:(id)sender {
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -120,6 +131,7 @@
 - (void)viewDidUnload {
     [self setImageView:nil];
     [self setImageScrollView:nil];
+    [self setPinch:nil];
     [super viewDidUnload];
 }
 
