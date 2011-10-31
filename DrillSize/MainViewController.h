@@ -47,11 +47,13 @@
     NSArray *valuesComponent;
     NSArray *metricsComponent;
 }
-@property (nonatomic) BOOL bannerIsVisible;
+@property(nonatomic) BOOL bannerIsVisible;
 @property(weak, nonatomic) IBOutlet UIPickerView *sizePicker;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property(strong, nonatomic) UIPopoverController *flipsidePopoverController;
-@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
+@property(weak, nonatomic) IBOutlet ADBannerView *adBannerView;
+@property(weak, nonatomic) IBOutlet UIButton *mmInchButton;
+@property(weak, nonatomic) IBOutlet UIButton *mmSizeButton;
 
 @property(copy) NSArray *drillsComponent;
 @property(copy) NSArray *valuesComponent;
