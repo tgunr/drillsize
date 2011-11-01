@@ -96,7 +96,6 @@
 @end
 
 @implementation InchMMViewController
-@synthesize pinch;
 @synthesize imageView;
 @synthesize imageScrollView;
 
@@ -131,7 +130,6 @@
 - (void)viewDidUnload {
     [self setImageView:nil];
     [self setImageScrollView:nil];
-    [self setPinch:nil];
     [super viewDidUnload];
 }
 

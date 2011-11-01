@@ -37,10 +37,6 @@
 @property (weak, nonatomic) IBOutlet TapDetectingImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
 - (IBAction)finish:(id)sender;
-- (IBAction)singleTap:(id)sender;
-- (IBAction)doubleTap:(id)sender;
-- (IBAction)pinch:(id)sender;
-@property (strong, nonatomic) IBOutletCollection(UIPinchGestureRecognizer) NSArray *pinch;
 
 @end
 
