@@ -29,7 +29,7 @@
       <file leaf-file-name="AppDelegate.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DrillSize/AppDelegate.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="62" selection-start="4119" selection-end="4119" vertical-scroll-proportion="0.029382957">
+            <state line="114" column="62" selection-start="4119" selection-end="4119" vertical-scroll-proportion="0.029325513">
               <folding />
             </state>
           </provider>
@@ -110,34 +110,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DrillSize" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DrillSize" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DrillSize" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="DirectoryView.Xcode">
         <subPane>
           <PATH>
@@ -176,6 +148,34 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -192,15 +192,15 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="272" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1064" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1066" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1064" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="270" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="267" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Application.DrillSize - iPhone">
     <configuration default="false" name="DrillSize - Debug" type="AppleRunConfiguration" factoryName="Application" temporary="true" TARGET_NAME="DrillSize" CONFIG_NAME="Debug" SDK_NAME="iphonesimulator5.0" ARCH_ID="Standard" DEVICE="IPHONE" DEBUGGER="LLDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
@@ -379,16 +379,12 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="34" column="0" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="328" column="32" selection-start="14693" selection-end="14693" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="328" column="32" selection-start="14693" selection-end="14693" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/Debug-iphoneos/DrillSize.app.dSYM/Contents/Info.plist">
@@ -418,7 +414,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DrillSize/AppDelegate.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="62" selection-start="4119" selection-end="4119" vertical-scroll-proportion="0.029382957" />
+        <state line="114" column="62" selection-start="4119" selection-end="4119" vertical-scroll-proportion="0.029325513">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
