@@ -226,4 +226,17 @@
 
 @end
 
+@implementation SizeMMViewController
 
+@synthesize imageView;
+@synthesize imageScrollView;
+
+
+
+- (IBAction)finish:(id)sender
+{
+    [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+
+@end

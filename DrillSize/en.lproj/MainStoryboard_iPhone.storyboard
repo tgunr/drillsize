@@ -144,7 +144,7 @@ Select a decimal size or metric size to view which drill size to use.
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="256" y="830"/>
+            <point key="canvasLocation" x="151" y="842"/>
         </scene>
         <scene sceneID="UjT-WH-kh8">
             <objects>
@@ -165,9 +165,6 @@ Select a decimal size or metric size to view which drill size to use.
                                         <gestureRecognizers/>
                                     </imageView>
                                 </subviews>
-                                <connections>
-                                    <outlet property="delegate" destination="729-gP-wpQ" id="GL2-ae-ujI"/>
-                                </connections>
                             </scrollView>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="qg7-2I-MxH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -195,22 +192,22 @@ Select a decimal size or metric size to view which drill size to use.
         <scene sceneID="cF2-tC-xMi">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5VS-xC-1Kx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="cXs-ro-MLw" customClass="InchMMViewController" sceneMemberID="viewController">
+                <viewController id="cXs-ro-MLw" customClass="SizeMMViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v31-2G-5wD">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="size-diam.png" id="d20-RM-kwQ">
+                                <rect key="frame" x="0.0" y="94" width="56" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="RMy-bd-gpL">
-                                <rect key="frame" x="58" y="59" width="320" height="395"/>
+                                <rect key="frame" x="55" y="91" width="266" height="331"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" image="sizes.png" id="vsb-c5-Lab" customClass="TapDetectingImageView">
-                                        <rect key="frame" x="0.0" y="33" width="720" height="330"/>
+                                        <rect key="frame" x="-10" y="0.0" width="670" height="330"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="size-diam.png" id="d20-RM-kwQ">
-                                        <rect key="frame" x="-5" y="36" width="56" height="305"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <inset key="contentInset" minX="0.0" minY="0.0" maxX="0.0" maxY="44"/>
@@ -222,7 +219,7 @@ Select a decimal size or metric size to view which drill size to use.
                                     <navigationItem title="mm/size" id="kme-34-OcU">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="AHn-1U-Ub9">
                                             <connections>
-                                                <action selector="finish:" destination="729-gP-wpQ" id="8iL-at-jlE"/>
+                                                <action selector="finish:" destination="cXs-ro-MLw" id="LqH-oX-0zu"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -234,11 +231,10 @@ Select a decimal size or metric size to view which drill size to use.
                     <toolbarItems/>
                     <connections>
                         <outlet property="imageScrollView" destination="RMy-bd-gpL" id="fdc-2h-XV7"/>
-                        <outlet property="imageView" destination="vsb-c5-Lab" id="Z2H-LY-SE5"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="601" y="602"/>
+            <point key="canvasLocation" x="565" y="643"/>
         </scene>
     </scenes>
     <resources>
@@ -257,13 +253,9 @@ Select a decimal size or metric size to view which drill size to use.
         <class className="InchMMViewController" superclassName="FlipsideViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InchMMViewController.h"/>
             <relationships>
-                <relationship kind="action" name="doubleTap:"/>
                 <relationship kind="action" name="finish:"/>
-                <relationship kind="action" name="pinch:"/>
-                <relationship kind="action" name="singleTap:"/>
                 <relationship kind="outlet" name="imageScrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="imageView" candidateClass="TapDetectingImageView"/>
-                <relationship kind="outletCollection" name="pinch" candidateClass="UIPinchGestureRecognizer"/>
             </relationships>
         </class>
         <class className="MainViewController" superclassName="UIViewController">
@@ -274,6 +266,14 @@ Select a decimal size or metric size to view which drill size to use.
                 <relationship kind="outlet" name="mmInchButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mmSizeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="sizePicker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="SizeMMViewController" superclassName="FlipsideViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SizeMMViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="finish:"/>
+                <relationship kind="outlet" name="imageScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="TapDetectingImageView"/>
             </relationships>
         </class>
         <class className="TapDetectingImageView" superclassName="UIImageView">
