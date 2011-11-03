@@ -34,14 +34,14 @@
     NSTimer *autoscrollTimer;  // Timer used for auto-scrolling.
     float autoscrollDistance;  // Distance to scroll the thumb view when auto-scroll timer fires.
 }
-@property (weak, nonatomic) IBOutlet TapDetectingImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
 - (IBAction)finish:(id)sender;
 
 @end
 
 @interface SizeMMViewController : ImageViewController <UIScrollViewDelegate, TapDetectingImageViewDelegate>
-@property (weak, nonatomic) IBOutlet TapDetectingImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
 - (IBAction)finish:(id)sender;
 

@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
 }
 
 - (void)viewDidUnload
@@ -234,6 +235,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.imageScrollView.contentSize=CGSizeMake(1280,960);
+    self.imageScrollView.contentSize=self.imageView.contentS
     self.imageScrollView.minimumZoomScale=0.5;
     self.imageScrollView.maximumZoomScale=6.0;
     self.imageScrollView.delegate = self;
