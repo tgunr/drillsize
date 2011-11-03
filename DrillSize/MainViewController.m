@@ -145,7 +145,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 
 @synthesize sizePicker = _sizePicker;
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize flipsidePopoverController = _flipsidePopoverController;
+@synthesize imagePopoverController = _imagePopoverController;
 @synthesize adBannerView;
 @synthesize mmInchButton;
 @synthesize mmSizeButton;
@@ -379,19 +379,19 @@ baselineAlignedWithFontOfSize:20];
 //		return tView;
 //	}
 //	
-#pragma mark - Flipside View Controller
+#pragma mark - image View Controller
 
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
+- (void)imageViewControllerDidFinish:(ImageViewController *)controller {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [self dismissModalViewControllerAnimated:YES];
     } else {
-        [self.flipsidePopoverController dismissPopoverAnimated:YES];
-        self.flipsidePopoverController = nil;
+        [self.imagePopoverController dismissPopoverAnimated:YES];
+        self.imagePopoverController = nil;
     }
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
-    self.flipsidePopoverController = nil;
+    self.imagePopoverController = nil;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -402,16 +402,16 @@ baselineAlignedWithFontOfSize:20];
     UIUserInterfaceIdiom idiom = [[UIDevice currentDevice] userInterfaceIdiom];
     if (idiom == UIUserInterfaceIdiomPad) {
         UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *) segue popoverController];
-        self.flipsidePopoverController = popoverController;
+        self.imagePopoverController = popoverController;
         popoverController.delegate = self;
     }
 //    }
 }
 
 - (IBAction)togglePopover:(id)sender {
-    if (self.flipsidePopoverController) {
-        [self.flipsidePopoverController dismissPopoverAnimated:YES];
-        self.flipsidePopoverController = nil;
+    if (self.imagePopoverController) {
+        [self.imagePopoverController dismissPopoverAnimated:YES];
+        self.imagePopoverController = nil;
     } else {
         [self performSegueWithIdentifier:@"showAlternate" sender:sender];
     }

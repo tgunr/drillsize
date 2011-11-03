@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0b9b09f-ca31-46f2-b0be-7f57364d5fba" name="Default" comment="Added rounded corners to buttons.&#10;mmInch view now functional.&#10;">
+    <list default="true" id="f0b9b09f-ca31-46f2-b0be-7f57364d5fba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize.xcodeproj/project.xcworkspace/xcuserdata/davec.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/DrillSize.xcodeproj/project.xcworkspace/xcuserdata/davec.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -26,20 +26,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FlipsideViewController.h" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DrillSize/FlipsideViewController.h">
+      <file leaf-file-name="ImageViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DrillSize/ImageViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="632" selection-end="632" vertical-scroll-proportion="0.36656892">
+            <state line="14" column="24" selection-start="293" selection-end="293" vertical-scroll-proportion="-3.8181818">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlipsideViewController.m" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DrillSize/FlipsideViewController.m">
+      <file leaf-file-name="MainStoryboard_iPhone.storyboard" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPhone.storyboard">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="0" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0">
+            <state line="275" column="64" selection-start="21046" selection-end="21046" vertical-scroll-proportion="6.1725664">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainStoryboard_iPad.storyboard" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPad.storyboard">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="82" selection-start="4886" selection-end="4886" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="413" column="13" selection-start="17744" selection-end="17744" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainViewController.h" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="50" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageViewController.m" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DrillSize/ImageViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="249" column="19" selection-start="7048" selection-end="7048" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1320130523000" expanded="true" signature="222:1679" placeholder="..." />
+                <marker date="1320130523000" expanded="true" signature="1619:1677" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="1738:1780" placeholder="..." />
+                <marker date="1320130523000" expanded="true" signature="1840:1988" placeholder="..." />
+                <marker date="1320130523000" expanded="true" signature="2042:2111" placeholder="..." />
+                <marker date="1320130523000" expanded="true" signature="2153:6596" placeholder="..." />
+                <marker date="1320130523000" expanded="false" signature="2166:2205" placeholder="..." />
+                <marker date="1320130523000" expanded="true" signature="2237:2295" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="2330:2335" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="2370:2378" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="2409:2412" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="2480:2510" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="2532:2756" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="2780:2874" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="2975:3185" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="3222:3691" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="3738:4179" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="4332:4335" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="4435:4659" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="4762:4991" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="5070:5851" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="5951:6594" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="6638:7088" placeholder="..." />
+                <marker date="1320130523000" expanded="false" signature="6652:6691" placeholder="..." />
+                <marker date="1320130523000" expanded="true" signature="6713:6877" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="6901:6995" placeholder="{...}" />
+                <marker date="1320130523000" expanded="true" signature="7027:7085" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,8 +137,12 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/DrillSize/main.m" />
+        <option value="$PROJECT_DIR$/DrillSize/ImageViewController.h" />
+        <option value="$PROJECT_DIR$/DrillSize/ImageViewController.m" />
         <option value="$PROJECT_DIR$/DrillSize/MainViewController.h" />
         <option value="$PROJECT_DIR$/DrillSize/MainViewController.m" />
+        <option value="$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPad.storyboard" />
+        <option value="$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPhone.storyboard" />
       </list>
     </option>
   </component>
@@ -157,6 +225,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeDirectoryView$1$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en.lproj" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,13 +412,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1174" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940108" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32827324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940108" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18924618" sideWeight="0.22908746" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15076436" sideWeight="0.63377607" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15076436" sideWeight="0.67172676" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3662239" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999474" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -342,7 +429,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940108" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39927405" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -353,7 +439,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <value>
@@ -405,16 +491,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1753" selection-end="1753" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="328" column="32" selection-start="14693" selection-end="14693" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/Debug-iphoneos/DrillSize.app.dSYM/Contents/Info.plist">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="32" selection-start="381" selection-end="381" vertical-scroll-proportion="0.0" />
@@ -437,16 +513,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DrillSize/FlipsideViewController.m">
+    <entry file="file://$PROJECT_DIR$/DrillSize/ImageViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="0" selection-start="1797" selection-end="1797" vertical-scroll-proportion="0.0">
+        <state line="14" column="24" selection-start="293" selection-end="293" vertical-scroll-proportion="-3.8181818">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DrillSize/FlipsideViewController.h">
+    <entry file="file://$PROJECT_DIR$/DrillSize/ImageViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="632" selection-end="632" vertical-scroll-proportion="0.36656892">
+        <state line="249" column="19" selection-start="7048" selection-end="7048" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1320130523000" expanded="true" signature="222:1679" placeholder="..." />
+            <marker date="1320130523000" expanded="true" signature="1619:1677" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="1738:1780" placeholder="..." />
+            <marker date="1320130523000" expanded="true" signature="1840:1988" placeholder="..." />
+            <marker date="1320130523000" expanded="true" signature="2042:2111" placeholder="..." />
+            <marker date="1320130523000" expanded="true" signature="2153:6596" placeholder="..." />
+            <marker date="1320130523000" expanded="false" signature="2166:2205" placeholder="..." />
+            <marker date="1320130523000" expanded="true" signature="2237:2295" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="2330:2335" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="2370:2378" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="2409:2412" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="2480:2510" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="2532:2756" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="2780:2874" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="2975:3185" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="3222:3691" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="3738:4179" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="4332:4335" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="4435:4659" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="4762:4991" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="5070:5851" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="5951:6594" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="6638:7088" placeholder="..." />
+            <marker date="1320130523000" expanded="false" signature="6652:6691" placeholder="..." />
+            <marker date="1320130523000" expanded="true" signature="6713:6877" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="6901:6995" placeholder="{...}" />
+            <marker date="1320130523000" expanded="true" signature="7027:7085" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="50" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="413" column="13" selection-start="17744" selection-end="17744" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPad.storyboard">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="82" selection-start="4886" selection-end="4886" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPhone.storyboard">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="275" column="64" selection-start="21046" selection-end="21046" vertical-scroll-proportion="6.1725664">
           <folding />
         </state>
       </provider>

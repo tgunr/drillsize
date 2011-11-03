@@ -1,21 +1,21 @@
 //
-//  FlipsideViewController.m
+//  ImageViewController.m
 //  DrillSize
 //
 //  Created by Dave Carlton on 10/25/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "FlipsideViewController.h"
+#import "ImageViewController.h"
 
-@implementation FlipsideViewController
+@implementation ImageViewController
 
 @synthesize delegate;
 @synthesize mainViewController;
 
 - (void)awakeFromNib
 {
-	self.contentSizeForViewInPopover = CGSizeMake(320.0, 480.0);
+//	self.contentSizeForViewInPopover = CGSizeMake(320.0, 480.0);
     [super awakeFromNib];
 }
 
@@ -76,7 +76,7 @@
 
 - (IBAction)done:(id)sender
 {
-    [self.delegate flipsideViewControllerDidFinish:self];
+    [self.delegate imageViewControllerDidFinish:self];
 }
 
 @end
@@ -101,10 +101,11 @@
 
 - (IBAction)finish:(id)sender
 {
-    [self.delegate flipsideViewControllerDidFinish:self];
+    [self.delegate imageViewControllerDidFinish:self];
 }
 
 - (IBAction)singleTap:(id)sender {
+	
 }
 
 - (IBAction)doubleTap:(id)sender {
@@ -231,11 +232,22 @@
 @synthesize imageView;
 @synthesize imageScrollView;
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.imageScrollView.minimumZoomScale=0.5;
+    self.imageScrollView.maximumZoomScale=6.0;
+    self.imageScrollView.delegate = self;
+}
 
+- (void)viewDidUnload {
+    [self setImageView:nil];
+    [self setImageScrollView:nil];
+    [super viewDidUnload];
+}
 
 - (IBAction)finish:(id)sender
 {
-    [self.delegate flipsideViewControllerDidFinish:self];
+    [self.delegate imageViewControllerDidFinish:self];
 }
 
 

@@ -1,5 +1,5 @@
 //
-//  FlipsideViewController.h
+//  ImageViewController.h
 //  DrillSize
 //
 //  Created by Dave Carlton on 10/25/11.
@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "TapDetectingImageView.h"
 
-@class FlipsideViewController;
+@class ImageViewController;
 @class MainViewController;
 
-@protocol FlipsideViewControllerDelegate
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
+@protocol ImageViewControllerDelegate
+- (void)imageViewControllerDidFinish:(ImageViewController *)controller;
 @end
 
-@interface FlipsideViewController : UIViewController
+@interface ImageViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet id <ImageViewControllerDelegate> delegate;
 @property (strong) MainViewController *mainViewController;
 
 - (IBAction)done:(id)sender;
@@ -29,7 +29,7 @@
 #define ZOOM_STEP 1.5
 #define AUTOSCROLL_THRESHOLD 30
 
-@interface InchMMViewController : FlipsideViewController <UIScrollViewDelegate, TapDetectingImageViewDelegate>
+@interface InchMMViewController : ImageViewController <UIScrollViewDelegate, TapDetectingImageViewDelegate>
 {
     NSTimer *autoscrollTimer;  // Timer used for auto-scrolling.
     float autoscrollDistance;  // Distance to scroll the thumb view when auto-scroll timer fires.
@@ -40,7 +40,7 @@
 
 @end
 
-@interface SizeMMViewController : FlipsideViewController <UIScrollViewDelegate, TapDetectingImageViewDelegate>
+@interface SizeMMViewController : ImageViewController <UIScrollViewDelegate, TapDetectingImageViewDelegate>
 @property (weak, nonatomic) IBOutlet TapDetectingImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
 - (IBAction)finish:(id)sender;

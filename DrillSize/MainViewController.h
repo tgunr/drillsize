@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 PolyMicro Systems. All rights reserved.
 //
 
-#import "FlipsideViewController.h"
+#import "ImageViewController.h"
 
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
@@ -42,7 +42,7 @@
 #define kValues 1
 #define kMetrics 2
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIVideoEditorControllerDelegate, ADBannerViewDelegate> {
+@interface MainViewController : UIViewController <ImageViewControllerDelegate, UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIVideoEditorControllerDelegate, ADBannerViewDelegate> {
     NSArray *drillsComponent;
     NSArray *valuesComponent;
     NSArray *metricsComponent;
@@ -50,7 +50,7 @@
 @property(nonatomic) BOOL bannerIsVisible;
 @property(weak, nonatomic) IBOutlet UIPickerView *sizePicker;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property(strong, nonatomic) UIPopoverController *flipsidePopoverController;
+@property(strong, nonatomic) UIPopoverController *imagePopoverController;
 @property(weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 @property(weak, nonatomic) IBOutlet UIButton *mmInchButton;
 @property(weak, nonatomic) IBOutlet UIButton *mmSizeButton;

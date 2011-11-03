@@ -18,7 +18,7 @@
 		7505891314577FFE00013A42 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7505891114577FFE00013A42 /* MainStoryboard_iPad.storyboard */; };
 		7505891614577FFE00013A42 /* DrillSize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */; };
 		7505891914577FFE00013A42 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891814577FFE00013A42 /* MainViewController.m */; };
-		7505891C14577FFE00013A42 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891B14577FFE00013A42 /* FlipsideViewController.m */; };
+		7505891C14577FFE00013A42 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891B14577FFE00013A42 /* ImageViewController.m */; };
 		755424E1145F2FB400CAF46D /* size-diam.png in Resources */ = {isa = PBXBuildFile; fileRef = 755424E0145F2FB400CAF46D /* size-diam.png */; };
 		755424E4145F30A100CAF46D /* sizes.png in Resources */ = {isa = PBXBuildFile; fileRef = 755424E3145F30A100CAF46D /* sizes.png */; };
 		757FF8DD145E7A6D001D3F78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */; };
@@ -51,8 +51,8 @@
 		7505891514577FFE00013A42 /* DrillSize.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrillSize.xcdatamodel; sourceTree = "<group>"; };
 		7505891714577FFE00013A42 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MainViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7505891814577FFE00013A42 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		7505891A14577FFE00013A42 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
-		7505891B14577FFE00013A42 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		7505891A14577FFE00013A42 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		7505891B14577FFE00013A42 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		755424E0145F2FB400CAF46D /* size-diam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "size-diam.png"; sourceTree = "<group>"; };
 		755424E3145F30A100CAF46D /* sizes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sizes.png; sourceTree = "<group>"; };
 		757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -127,8 +127,8 @@
 				7505891114577FFE00013A42 /* MainStoryboard_iPad.storyboard */,
 				7505891714577FFE00013A42 /* MainViewController.h */,
 				7505891814577FFE00013A42 /* MainViewController.m */,
-				7505891A14577FFE00013A42 /* FlipsideViewController.h */,
-				7505891B14577FFE00013A42 /* FlipsideViewController.m */,
+				7505891A14577FFE00013A42 /* ImageViewController.h */,
+				7505891B14577FFE00013A42 /* ImageViewController.m */,
 				75FB500F145DFD8C00704822 /* TapDetectingImageView.h */,
 				75FB5010145DFD8C00704822 /* TapDetectingImageView.m */,
 				75FB5018145E145600704822 /* ThumbImageView.h */,
@@ -237,7 +237,7 @@
 				7505890D14577FFE00013A42 /* AppDelegate.m in Sources */,
 				7505891614577FFE00013A42 /* DrillSize.xcdatamodeld in Sources */,
 				7505891914577FFE00013A42 /* MainViewController.m in Sources */,
-				7505891C14577FFE00013A42 /* FlipsideViewController.m in Sources */,
+				7505891C14577FFE00013A42 /* ImageViewController.m in Sources */,
 				75FB5011145DFD8C00704822 /* TapDetectingImageView.m in Sources */,
 				75FB501A145E145700704822 /* ThumbImageView.m in Sources */,
 			);
