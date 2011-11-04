@@ -6,6 +6,7 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "ImageViewController.h"
 
 @implementation ImageViewController
@@ -230,22 +231,51 @@
 
 @implementation SizeMMViewController
 
+@synthesize diamLabelView;
 @synthesize imageView;
 @synthesize imageScrollView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.imageScrollView.contentSize=CGSizeMake(1280,960);
-    self.imageScrollView.contentSize=self.imageView.contentS
+    self.imageScrollView.contentSize=CGSizeMake(686,311);
     self.imageScrollView.minimumZoomScale=0.5;
     self.imageScrollView.maximumZoomScale=6.0;
     self.imageScrollView.delegate = self;
+	
+//	UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 70)];
+//	label.numberOfLines = 1;
+//	label.text = @"Diameter in mm";
+//	label.backgroundColor = [UIColor clearColor];
+//	label.textColor = [UIColor whiteColor];
+//	
+//	label.highlightedTextColor = [UIColor blackColor];
+//	label.textAlignment = UITextAlignmentLeft;
+//	label.font = [UIFont systemFontOfSize:12];
+//	
+//	//rotate label in 45 degrees
+//	label.transform = CGAffineTransformMakeRotation( M_PI/4 );
+	
+	[self.view addSubview:diamLabelView];
 }
 
 - (void)viewDidUnload {
     [self setImageView:nil];
     [self setImageScrollView:nil];
+	[self setDiamLabelView:nil];
     [super viewDidUnload];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+//    UIDevice * aDevice = [UIDevice currentDevice];
+//    UIUserInterfaceIdiom idiom = [aDevice userInterfaceIdiom];
+//	  Return YES for supported orientations
+		if(interfaceOrientation == UIInterfaceOrientationPortrait ||
+		   interfaceOrientation	== UIInterfaceOrientationPortraitUpsideDown) {
+			return YES;
+		}
+		else
+			return NO;
 }
 
 - (IBAction)finish:(id)sender
