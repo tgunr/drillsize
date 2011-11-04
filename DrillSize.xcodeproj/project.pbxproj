@@ -15,7 +15,6 @@
 		7505890914577FFE00013A42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505890814577FFE00013A42 /* main.m */; };
 		7505890D14577FFE00013A42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505890C14577FFE00013A42 /* AppDelegate.m */; };
 		7505891014577FFE00013A42 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7505890E14577FFE00013A42 /* MainStoryboard_iPhone.storyboard */; };
-		7505891314577FFE00013A42 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7505891114577FFE00013A42 /* MainStoryboard_iPad.storyboard */; };
 		7505891614577FFE00013A42 /* DrillSize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */; };
 		7505891914577FFE00013A42 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891814577FFE00013A42 /* MainViewController.m */; };
 		7505891C14577FFE00013A42 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891B14577FFE00013A42 /* ImageViewController.m */; };
@@ -47,7 +46,6 @@
 		7505890B14577FFE00013A42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7505890C14577FFE00013A42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7505890F14577FFE00013A42 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		7505891214577FFE00013A42 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		7505891514577FFE00013A42 /* DrillSize.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DrillSize.xcdatamodel; sourceTree = "<group>"; };
 		7505891714577FFE00013A42 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MainViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7505891814577FFE00013A42 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -124,7 +122,6 @@
 				7505890B14577FFE00013A42 /* AppDelegate.h */,
 				7505890C14577FFE00013A42 /* AppDelegate.m */,
 				7505890E14577FFE00013A42 /* MainStoryboard_iPhone.storyboard */,
-				7505891114577FFE00013A42 /* MainStoryboard_iPad.storyboard */,
 				7505891714577FFE00013A42 /* MainViewController.h */,
 				7505891814577FFE00013A42 /* MainViewController.m */,
 				7505891A14577FFE00013A42 /* ImageViewController.h */,
@@ -213,7 +210,6 @@
 			files = (
 				7505890714577FFE00013A42 /* InfoPlist.strings in Resources */,
 				7505891014577FFE00013A42 /* MainStoryboard_iPhone.storyboard in Resources */,
-				7505891314577FFE00013A42 /* MainStoryboard_iPad.storyboard in Resources */,
 				75F54B601459280100EC50C7 /* drillbit-114.png in Resources */,
 				75DA0F4914594660008C7EAF /* Default@2x.png in Resources */,
 				75D0832A145B26D80094E89E /* Default.png in Resources */,
@@ -260,14 +256,6 @@
 				7505890F14577FFE00013A42 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		7505891114577FFE00013A42 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7505891214577FFE00013A42 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

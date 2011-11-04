@@ -41,6 +41,7 @@
 @end
 
 @interface SizeMMViewController : ImageViewController <UIScrollViewDelegate, TapDetectingImageViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *diamLabelView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *imageScrollView;
 - (IBAction)finish:(id)sender;
