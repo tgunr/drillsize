@@ -379,10 +379,12 @@
 		75D083291459E5260094E89E /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: polyMicro Systems";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrillSize/DrillSize-Prefix.pch";
 				INFOPLIST_FILE = "DrillSize/DrillSize-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3047E0D1-A764-45B2-AF66-8CAC4AA5A2BE";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
