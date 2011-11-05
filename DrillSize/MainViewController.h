@@ -39,6 +39,7 @@
 @end
 
 #import "CoolButton.h"
+#import "GradientButton.h"
 
 #define kSizes 0
 #define kValues 1
@@ -54,8 +55,8 @@
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property(strong, nonatomic) UIPopoverController *imagePopoverController;
 @property(weak, nonatomic) IBOutlet ADBannerView *adBannerView;
-@property(weak, nonatomic) IBOutlet CoolButton *mmInchButton;
-@property(weak, nonatomic) IBOutlet CoolButton *mmSizeButton;
+@property(weak, nonatomic) IBOutlet GradientButton *mmInchButton;
+@property(weak, nonatomic) IBOutlet GradientButton *mmSizeButton;
 
 @property(copy) NSArray *drillsComponent;
 @property(copy) NSArray *valuesComponent;

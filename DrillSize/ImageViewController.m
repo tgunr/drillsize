@@ -126,7 +126,7 @@
     [super viewDidLoad];
     self.imageScrollView.minimumZoomScale=0.5;
     self.imageScrollView.maximumZoomScale=6.0;
-    self.imageScrollView.contentSize=CGSizeMake(1203, 203);
+    self.imageScrollView.contentSize=CGSizeMake(1138, 112);
     self.imageScrollView.delegate = self;
 }
 

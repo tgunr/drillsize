@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -31,6 +31,7 @@
                             <pickerView contentMode="scaleToFill" id="mtH-sm-Ces">
                                 <rect key="frame" x="3" y="60" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.70196080207824707" green="0.77647066116333008" blue="0.89411771297454834" alpha="1" colorSpace="deviceRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2" id="oxN-T0-h9J"/>
                                     <outlet property="delegate" destination="2" id="xN9-NU-3Y4"/>
@@ -51,18 +52,19 @@
                                 <rect key="frame" x="20" y="20" width="286" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="0.62745100259780884" green="0.65882354974746704" blue="0.78039222955703735" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="textColor" red="0.85882359743118286" green="0.87450987100601196" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hAf-5n-Vh1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="hAf-5n-Vh1" customClass="GradientButton">
                                 <rect key="frame" x="18" y="294" width="100" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62745100259780884" green="0.66666668653488159" blue="0.78039222955703735" alpha="1" colorSpace="deviceRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                 <state key="normal" title="mm/inch">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -72,15 +74,16 @@
                                     <segue destination="729-gP-wpQ" kind="modal" identifier="showInchMM" id="e68-oa-c7A"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vcs-VJ-Cim">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vcs-VJ-Cim" customClass="GradientButton">
                                 <rect key="frame" x="204" y="294" width="98" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.62745100259780884" green="0.66666668653488159" blue="0.78039222955703735" alpha="1" colorSpace="deviceRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="mm/size">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -110,15 +113,17 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="SPX-uN-jbZ">
-                                <rect key="frame" x="20" y="106" width="280" height="188"/>
+                            <textView userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="SPX-uN-jbZ">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.62745100259999997" green="0.66666668650000005" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
                                 <string key="text">Drill Sizes
 Select a drill size in the first column to view the decimal and metric sizes.
 
 Select a decimal size or metric size to view which drill size to use.
-</string>
+
+Press the buttons and scroll the view to see a visual representation.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -135,15 +140,8 @@ Select a decimal size or metric size to view which drill size to use.
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Usage" lineBreakMode="tailTruncation" minimumFontSize="10" id="glm-Yp-3zq">
-                                <rect key="frame" x="20" y="68" width="50" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62745100259999997" green="0.66666668650000005" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                 </viewController>
             </objects>
@@ -157,18 +155,6 @@ Select a decimal size or metric size to view which drill size to use.
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="2" id="uVJ-Ic-CqR">
-                                <rect key="frame" x="-4" y="44" width="327.5" height="416"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView contentMode="center" image="mm-inch.png" id="BnC-Gs-DDm">
-                                        <rect key="frame" x="20" y="0.0" width="1193" height="416"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                        <gestureRecognizers/>
-                                    </imageView>
-                                </subviews>
-                            </scrollView>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="qg7-2I-MxH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -182,12 +168,43 @@ Select a decimal size or metric size to view which drill size to use.
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" id="Gli-KE-Opr">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <scrollView multipleTouchEnabled="YES" contentMode="TopLeft" bounces="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" id="uVJ-Ic-CqR">
+                                        <rect key="frame" x="0.0" y="49" width="320" height="112"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="left" image="mm-inch.png" id="3NO-rm-A5Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="1138" height="112"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </scrollView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="inch" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="ZZr-5e-TdL">
+                                        <rect key="frame" x="144" y="169" width="32" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="mm" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="LyB-yZ-mnn">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.62745100259999997" green="0.66666668650000005" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="backgroundColor" red="0.62745100259999997" green="0.66666668650000005" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
                         <outlet property="imageScrollView" destination="uVJ-Ic-CqR" id="9L8-ue-WI5"/>
-                        <outlet property="imageView" destination="BnC-Gs-DDm" id="ANp-aL-0UL"/>
+                        <outlet property="imageView" destination="3NO-rm-A5Q" id="7rj-hM-qoI"/>
                     </connections>
                 </viewController>
             </objects>
@@ -222,32 +239,32 @@ Select a decimal size or metric size to view which drill size to use.
                                         <rect key="frame" x="43" y="10" width="234" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.9803922176361084" green="0.9803922176361084" blue="0.98431378602981567" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Drill Gauge" lineBreakMode="tailTruncation" minimumFontSize="10" id="DvU-vH-vfm">
                                         <rect key="frame" x="117" y="367" width="86" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" image="size-diam.png" id="d20-RM-kwQ">
-                                        <rect key="frame" x="12" y="39" width="56" height="305"/>
+                                    <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="center" image="size-diam.png" id="d20-RM-kwQ">
+                                        <rect key="frame" x="17" y="39" width="56" height="305"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="mm" lineBreakMode="tailTruncation" minimumFontSize="10" id="s9p-k9-fEG">
-                                        <rect key="frame" x="2" y="198" width="30" height="21"/>
+                                        <rect key="frame" x="2" y="209" width="30" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" showsVerticalScrollIndicator="NO" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="2" id="RMy-bd-gpL">
-                                        <rect key="frame" x="47" y="48" width="274" height="311"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" showsVerticalScrollIndicator="NO" indicatorStyle="black" minimumZoomScale="0.0" maximumZoomScale="0.0" id="RMy-bd-gpL">
+                                        <rect key="frame" x="54" y="48" width="274" height="311"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <imageView contentMode="left" image="sizes.png" id="vsb-c5-Lab">
+                                            <imageView alpha="0.80000000000000004" contentMode="left" image="sizes.png" id="vsb-c5-Lab">
                                                 <rect key="frame" x="0.0" y="0.0" width="686" height="311"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
@@ -259,7 +276,7 @@ Select a decimal size or metric size to view which drill size to use.
                                         </connections>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.62745100259999997" green="0.66666668650000005" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -276,11 +293,14 @@ Select a decimal size or metric size to view which drill size to use.
         </scene>
     </scenes>
     <resources>
-        <image name="mm-inch.png" width="1203" height="203"/>
+        <image name="mm-inch.png" width="1138" height="112"/>
         <image name="size-diam.png" width="28" height="297"/>
         <image name="sizes.png" width="652" height="311"/>
     </resources>
     <classes>
+        <class className="GradientButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
+        </class>
         <class className="ImageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
             <relationships>
@@ -301,8 +321,8 @@ Select a decimal size or metric size to view which drill size to use.
             <relationships>
                 <relationship kind="action" name="togglePopover:"/>
                 <relationship kind="outlet" name="adBannerView" candidateClass="ADBannerView"/>
-                <relationship kind="outlet" name="mmInchButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="mmSizeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mmInchButton" candidateClass="GradientButton"/>
+                <relationship kind="outlet" name="mmSizeButton" candidateClass="GradientButton"/>
                 <relationship kind="outlet" name="sizePicker" candidateClass="UIPickerView"/>
             </relationships>
         </class>

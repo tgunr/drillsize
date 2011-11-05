@@ -230,7 +230,7 @@ baselineAlignedWithFontOfSize:20];
     }
 
     drillsComponent = sizeStringArray;
-    NSLog(@"drillsComponent: %d", [drillsComponent count]);
+//    NSLog(@"drillsComponent: %d", [drillsComponent count]);
     valuesComponent = valueNumberArray;
     metricsComponent = metricNumberArray;
 
@@ -242,10 +242,12 @@ baselineAlignedWithFontOfSize:20];
 
     mmInchButton.layer.cornerRadius = 8;
     mmInchButton.layer.masksToBounds = YES;
-    [mmInchButton setButtonColor:[UIColor colorWithRed:102 green:130 blue:170 alpha:1]];
+//	[self.mmInchButton setButtonColor:[UIColor colorWithRed:160/255.0 green:170/255.0 blue:200/255.0 alpha:1.0]];
+
 
     mmSizeButton.layer.cornerRadius = 8;
     mmSizeButton.layer.masksToBounds = YES;
+//	[self.mmSizeButton setButtonColor:[UIColor colorWithRed:160/255.0 green:170/255.0 blue:200/255.0 alpha:1.0]];
 }
 
 - (void)viewDidUnload {
@@ -363,7 +365,7 @@ baselineAlignedWithFontOfSize:20];
             break;
         }
     }
-    NSLog(@"titleForRow: %@", formattedNumberString);
+//    NSLog(@"titleForRow: %@", formattedNumberString);
     return formattedNumberString;
 }
 

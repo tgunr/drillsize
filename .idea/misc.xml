@@ -3,6 +3,6 @@
   <component name="ProjectResources">
     <default-html-doctype>$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5.rnc</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="iphoneos5.0" project-jdk-type="com.jetbrains.cidr.frameworks.AppleSdkType" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="iphonesimulator5.0" project-jdk-type="com.jetbrains.cidr.frameworks.AppleSdkType" />
 </project>
 
