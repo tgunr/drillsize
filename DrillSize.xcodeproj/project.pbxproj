@@ -18,18 +18,17 @@
 		7505891614577FFE00013A42 /* DrillSize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */; };
 		7505891914577FFE00013A42 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891814577FFE00013A42 /* MainViewController.m */; };
 		7505891C14577FFE00013A42 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891B14577FFE00013A42 /* ImageViewController.m */; };
-		755424E1145F2FB400CAF46D /* size-diam.png in Resources */ = {isa = PBXBuildFile; fileRef = 755424E0145F2FB400CAF46D /* size-diam.png */; };
-		755424E4145F30A100CAF46D /* sizes.png in Resources */ = {isa = PBXBuildFile; fileRef = 755424E3145F30A100CAF46D /* sizes.png */; };
 		757FF8DD145E7A6D001D3F78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */; };
-		75D0832A145B26D80094E89E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F54B631459283400EC50C7 /* Default.png */; };
-		75D0832C145B26E00094E89E /* bit-57X57.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D0832B145B26E00094E89E /* bit-57X57.png */; };
-		75D0832E145B26E70094E89E /* bit-114X114.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D0832D145B26E70094E89E /* bit-114X114.png */; };
-		75D08330145B353B0094E89E /* mm-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D0832F145B353B0094E89E /* mm-inch.png */; };
-		75D08332145B35640094E89E /* Us_drill_sizes_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D08331145B35640094E89E /* Us_drill_sizes_2.png */; };
 		75D721131464F9D800D9CAE4 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D721121464F9D800D9CAE4 /* GradientButton.m */; };
-		75DA0F4914594660008C7EAF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F54B611459281F00EC50C7 /* Default@2x.png */; };
+		75D7214D1465ABEB00D9CAE4 /* mm-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D721491465ABEB00D9CAE4 /* mm-inch.png */; };
+		75D7214E1465ABEB00D9CAE4 /* size-diam.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D7214A1465ABEB00D9CAE4 /* size-diam.png */; };
+		75D7214F1465ABEB00D9CAE4 /* sizes.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D7214B1465ABEB00D9CAE4 /* sizes.png */; };
+		75D721501465ABEB00D9CAE4 /* Us_drill_sizes_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D7214C1465ABEB00D9CAE4 /* Us_drill_sizes_2.png */; };
+		75D7215C1465AE0800D9CAE4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D7215B1465AE0800D9CAE4 /* Default@2x.png */; };
+		75D7215E1465AE2C00D9CAE4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D7215D1465AE2C00D9CAE4 /* Default.png */; };
+		75D721601465AE3900D9CAE4 /* bit-57X57.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D7215F1465AE3900D9CAE4 /* bit-57X57.png */; };
+		75D721621465AE4400D9CAE4 /* bit-114X114.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D721611465AE4300D9CAE4 /* bit-114X114.png */; };
 		75E3684B1464A96B00586C38 /* CoolButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E3684A1464A96B00586C38 /* CoolButton.m */; };
-		75F54B601459280100EC50C7 /* drillbit-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F54B5F1459280100EC50C7 /* drillbit-114.png */; };
 		75F54B6714592EF800EC50C9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F54B6714592EF800EC50C8 /* iAd.framework */; };
 		75FB5011145DFD8C00704822 /* TapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB5010145DFD8C00704822 /* TapDetectingImageView.m */; };
 		75FB501A145E145700704822 /* ThumbImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB5019145E145600704822 /* ThumbImageView.m */; };
@@ -53,21 +52,19 @@
 		7505891814577FFE00013A42 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7505891A14577FFE00013A42 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7505891B14577FFE00013A42 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
-		755424E0145F2FB400CAF46D /* size-diam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "size-diam.png"; sourceTree = "<group>"; };
-		755424E3145F30A100CAF46D /* sizes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sizes.png; sourceTree = "<group>"; };
 		757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		75D0832B145B26E00094E89E /* bit-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-57X57.png"; path = "../bit-57X57.png"; sourceTree = "<group>"; };
-		75D0832D145B26E70094E89E /* bit-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-114X114.png"; path = "../bit-114X114.png"; sourceTree = "<group>"; };
-		75D0832F145B353B0094E89E /* mm-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm-inch.png"; sourceTree = "<group>"; };
-		75D08331145B35640094E89E /* Us_drill_sizes_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Us_drill_sizes_2.png; sourceTree = "<group>"; };
 		75D721111464F9D800D9CAE4 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientButton.h; path = "../../Contributed/KristopherJohnson-gradientbuttons-fc52790e5188/Classes/GradientButton.h"; sourceTree = "<group>"; };
 		75D721121464F9D800D9CAE4 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientButton.m; path = "../../Contributed/KristopherJohnson-gradientbuttons-fc52790e5188/Classes/GradientButton.m"; sourceTree = "<group>"; };
+		75D721491465ABEB00D9CAE4 /* mm-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mm-inch.png"; path = "Resources/mm-inch.png"; sourceTree = "<group>"; };
+		75D7214A1465ABEB00D9CAE4 /* size-diam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "size-diam.png"; path = "Resources/size-diam.png"; sourceTree = "<group>"; };
+		75D7214B1465ABEB00D9CAE4 /* sizes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sizes.png; path = Resources/sizes.png; sourceTree = "<group>"; };
+		75D7214C1465ABEB00D9CAE4 /* Us_drill_sizes_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Us_drill_sizes_2.png; path = Resources/Us_drill_sizes_2.png; sourceTree = "<group>"; };
+		75D7215B1465AE0800D9CAE4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		75D7215D1465AE2C00D9CAE4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		75D7215F1465AE3900D9CAE4 /* bit-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-57X57.png"; path = "../bit-57X57.png"; sourceTree = "<group>"; };
+		75D721611465AE4300D9CAE4 /* bit-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-114X114.png"; path = "../bit-114X114.png"; sourceTree = "<group>"; };
 		75E368491464A96B00586C38 /* CoolButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoolButton.h; path = ../../Contributed/CoolButtons/CoolButtons/CoolButton.h; sourceTree = "<group>"; };
 		75E3684A1464A96B00586C38 /* CoolButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoolButton.m; path = ../../Contributed/CoolButtons/CoolButtons/CoolButton.m; sourceTree = "<group>"; };
-		75F54B5F1459280100EC50C7 /* drillbit-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "drillbit-114.png"; path = "../drillbit-114.png"; sourceTree = "<group>"; };
-		75F54B611459281F00EC50C7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
-		75F54B631459283400EC50C7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
-		75F54B6714592EF800EC50C7 /* drillbit-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "drillbit-57.png"; path = "../drillbit-57.png"; sourceTree = "<group>"; };
 		75F54B6714592EF800EC50C8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		75FB500F145DFD8C00704822 /* TapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDetectingImageView.h; sourceTree = "<group>"; };
 		75FB5010145DFD8C00704822 /* TapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapDetectingImageView.m; sourceTree = "<group>"; };
@@ -141,6 +138,7 @@
 				75FB5018145E145600704822 /* ThumbImageView.h */,
 				75FB5019145E145600704822 /* ThumbImageView.m */,
 				7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */,
+				75D721481465AB1800D9CAE4 /* Resources */,
 				7505890314577FFD00013A42 /* Supporting Files */,
 			);
 			path = DrillSize;
@@ -149,22 +147,27 @@
 		7505890314577FFD00013A42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				755424E3145F30A100CAF46D /* sizes.png */,
-				755424E0145F2FB400CAF46D /* size-diam.png */,
-				75D0832B145B26E00094E89E /* bit-57X57.png */,
-				75D0832D145B26E70094E89E /* bit-114X114.png */,
-				75D08331145B35640094E89E /* Us_drill_sizes_2.png */,
-				75D0832F145B353B0094E89E /* mm-inch.png */,
-				75F54B6714592EF800EC50C7 /* drillbit-57.png */,
-				75F54B631459283400EC50C7 /* Default.png */,
-				75F54B611459281F00EC50C7 /* Default@2x.png */,
-				75F54B5F1459280100EC50C7 /* drillbit-114.png */,
 				7505890414577FFD00013A42 /* DrillSize-Info.plist */,
 				7505890514577FFE00013A42 /* InfoPlist.strings */,
 				7505890814577FFE00013A42 /* main.m */,
 				7505890A14577FFE00013A42 /* DrillSize-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		75D721481465AB1800D9CAE4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75D721611465AE4300D9CAE4 /* bit-114X114.png */,
+				75D7215F1465AE3900D9CAE4 /* bit-57X57.png */,
+				75D7215D1465AE2C00D9CAE4 /* Default.png */,
+				75D7215B1465AE0800D9CAE4 /* Default@2x.png */,
+				75D721491465ABEB00D9CAE4 /* mm-inch.png */,
+				75D7214A1465ABEB00D9CAE4 /* size-diam.png */,
+				75D7214B1465ABEB00D9CAE4 /* sizes.png */,
+				75D7214C1465ABEB00D9CAE4 /* Us_drill_sizes_2.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,15 +223,14 @@
 			files = (
 				7505890714577FFE00013A42 /* InfoPlist.strings in Resources */,
 				7505891014577FFE00013A42 /* MainStoryboard_iPhone.storyboard in Resources */,
-				75F54B601459280100EC50C7 /* drillbit-114.png in Resources */,
-				75DA0F4914594660008C7EAF /* Default@2x.png in Resources */,
-				75D0832A145B26D80094E89E /* Default.png in Resources */,
-				75D0832C145B26E00094E89E /* bit-57X57.png in Resources */,
-				75D0832E145B26E70094E89E /* bit-114X114.png in Resources */,
-				75D08330145B353B0094E89E /* mm-inch.png in Resources */,
-				75D08332145B35640094E89E /* Us_drill_sizes_2.png in Resources */,
-				755424E1145F2FB400CAF46D /* size-diam.png in Resources */,
-				755424E4145F30A100CAF46D /* sizes.png in Resources */,
+				75D7214D1465ABEB00D9CAE4 /* mm-inch.png in Resources */,
+				75D7214E1465ABEB00D9CAE4 /* size-diam.png in Resources */,
+				75D7214F1465ABEB00D9CAE4 /* sizes.png in Resources */,
+				75D721501465ABEB00D9CAE4 /* Us_drill_sizes_2.png in Resources */,
+				75D7215C1465AE0800D9CAE4 /* Default@2x.png in Resources */,
+				75D7215E1465AE2C00D9CAE4 /* Default.png in Resources */,
+				75D721601465AE3900D9CAE4 /* bit-57X57.png in Resources */,
+				75D721621465AE4400D9CAE4 /* bit-114X114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
