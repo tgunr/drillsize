@@ -93,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				7505890214577FFD00013A42 /* DrillSize */,
+				7505890314577FFD00013A42 /* Supporting Files */,
+				75D721481465AB1800D9CAE4 /* Resources */,
 				750588F914577FFD00013A42 /* Frameworks */,
 				750588F714577FFD00013A42 /* Products */,
 			);
@@ -137,9 +139,6 @@
 				75FB5010145DFD8C00704822 /* TapDetectingImageView.m */,
 				75FB5018145E145600704822 /* ThumbImageView.h */,
 				75FB5019145E145600704822 /* ThumbImageView.m */,
-				7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */,
-				75D721481465AB1800D9CAE4 /* Resources */,
-				7505890314577FFD00013A42 /* Supporting Files */,
 			);
 			path = DrillSize;
 			sourceTree = "<group>";
@@ -147,12 +146,14 @@
 		7505890314577FFD00013A42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */,
 				7505890414577FFD00013A42 /* DrillSize-Info.plist */,
 				7505890514577FFE00013A42 /* InfoPlist.strings */,
 				7505890814577FFE00013A42 /* main.m */,
 				7505890A14577FFE00013A42 /* DrillSize-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = DrillSize;
 			sourceTree = "<group>";
 		};
 		75D721481465AB1800D9CAE4 /* Resources */ = {
@@ -168,6 +169,7 @@
 				75D7214C1465ABEB00D9CAE4 /* Us_drill_sizes_2.png */,
 			);
 			name = Resources;
+			path = DrillSize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
