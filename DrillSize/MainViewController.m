@@ -242,6 +242,7 @@ baselineAlignedWithFontOfSize:20];
 
     mmInchButton.layer.cornerRadius = 8;
     mmInchButton.layer.masksToBounds = YES;
+    [mmInchButton setButtonColor:[UIColor colorWithRed:102 green:130 blue:170 alpha:1]];
 
     mmSizeButton.layer.cornerRadius = 8;
     mmSizeButton.layer.masksToBounds = YES;

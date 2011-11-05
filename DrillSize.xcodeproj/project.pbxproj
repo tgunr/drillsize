@@ -27,6 +27,7 @@
 		75D08330145B353B0094E89E /* mm-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D0832F145B353B0094E89E /* mm-inch.png */; };
 		75D08332145B35640094E89E /* Us_drill_sizes_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D08331145B35640094E89E /* Us_drill_sizes_2.png */; };
 		75DA0F4914594660008C7EAF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F54B611459281F00EC50C7 /* Default@2x.png */; };
+		75E3684B1464A96B00586C38 /* CoolButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E3684A1464A96B00586C38 /* CoolButton.m */; };
 		75F54B601459280100EC50C7 /* drillbit-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F54B5F1459280100EC50C7 /* drillbit-114.png */; };
 		75F54B6714592EF800EC50C9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F54B6714592EF800EC50C8 /* iAd.framework */; };
 		75FB5011145DFD8C00704822 /* TapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB5010145DFD8C00704822 /* TapDetectingImageView.m */; };
@@ -58,6 +59,8 @@
 		75D0832D145B26E70094E89E /* bit-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-114X114.png"; path = "../bit-114X114.png"; sourceTree = "<group>"; };
 		75D0832F145B353B0094E89E /* mm-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mm-inch.png"; sourceTree = "<group>"; };
 		75D08331145B35640094E89E /* Us_drill_sizes_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Us_drill_sizes_2.png; sourceTree = "<group>"; };
+		75E368491464A96B00586C38 /* CoolButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoolButton.h; path = ../../Contributed/CoolButtons/CoolButtons/CoolButton.h; sourceTree = "<group>"; };
+		75E3684A1464A96B00586C38 /* CoolButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoolButton.m; path = ../../Contributed/CoolButtons/CoolButtons/CoolButton.m; sourceTree = "<group>"; };
 		75F54B5F1459280100EC50C7 /* drillbit-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "drillbit-114.png"; path = "../drillbit-114.png"; sourceTree = "<group>"; };
 		75F54B611459281F00EC50C7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		75F54B631459283400EC50C7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 		7505890214577FFD00013A42 /* DrillSize */ = {
 			isa = PBXGroup;
 			children = (
+				75E368491464A96B00586C38 /* CoolButton.h */,
+				75E3684A1464A96B00586C38 /* CoolButton.m */,
 				7505890B14577FFE00013A42 /* AppDelegate.h */,
 				7505890C14577FFE00013A42 /* AppDelegate.m */,
 				7505890E14577FFE00013A42 /* MainStoryboard_iPhone.storyboard */,
@@ -236,6 +241,7 @@
 				7505891C14577FFE00013A42 /* ImageViewController.m in Sources */,
 				75FB5011145DFD8C00704822 /* TapDetectingImageView.m in Sources */,
 				75FB501A145E145700704822 /* ThumbImageView.m in Sources */,
+				75E3684B1464A96B00586C38 /* CoolButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
