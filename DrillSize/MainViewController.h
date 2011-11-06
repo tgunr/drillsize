@@ -46,9 +46,6 @@
 #define kMetrics 2
 
 @interface MainViewController : UIViewController <ImageViewControllerDelegate, UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIVideoEditorControllerDelegate, ADBannerViewDelegate> {
-    NSArray *drillsComponent;
-    NSArray *valuesComponent;
-    NSArray *metricsComponent;
 }
 @property(nonatomic) BOOL bannerIsVisible;
 @property(weak, nonatomic) IBOutlet UIPickerView *sizePicker;
@@ -57,12 +54,19 @@
 @property(weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 @property(weak, nonatomic) IBOutlet GradientButton *mmInchButton;
 @property(weak, nonatomic) IBOutlet GradientButton *mmSizeButton;
+@property(weak, nonatomic) IBOutlet UISwitch *sixtyFoursOnly;
 
 @property(copy) NSArray *drillsComponent;
 @property(copy) NSArray *valuesComponent;
 @property(copy) NSArray *metricsComponent;
 
+@property(copy) NSArray *sxityFoursDrillsComponent;
+@property(copy) NSArray *sxityFoursValuesComponent;
+@property(copy) NSArray *sxityFoursMetricsComponent;
+
 - (IBAction)togglePopover:(id)sender;
+
+- (IBAction)sixtyFoursChanged:(id)sender;
 @end
 
 

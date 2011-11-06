@@ -7,7 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import <QuartzCore/QuartzCore.h>
 
 // used to find existing component labels among UIPicker's children
 #define kMagicTag 89464534
@@ -149,9 +148,13 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 @synthesize adBannerView;
 @synthesize mmInchButton;
 @synthesize mmSizeButton;
+@synthesize sixtyFoursOnly;
 @synthesize drillsComponent;
 @synthesize valuesComponent;
 @synthesize metricsComponent;
+@synthesize sxityFoursDrillsComponent;
+@synthesize sxityFoursValuesComponent;
+@synthesize sxityFoursMetricsComponent;
 @synthesize bannerIsVisible;
 
 - (void)didReceiveMemoryWarning {
@@ -204,6 +207,9 @@ baselineAlignedWithFontOfSize:20];
     NSMutableArray *sizeStringArray = [NSMutableArray arrayWithCapacity:128];
     NSMutableArray *valueNumberArray = [NSMutableArray arrayWithCapacity:128];
     NSMutableArray *metricNumberArray = [NSMutableArray arrayWithCapacity:128];
+    NSMutableArray *sixtyFoursSizeStringArray = [NSMutableArray arrayWithCapacity:64];
+    NSMutableArray *sixtyFoursValueNumberArray = [NSMutableArray arrayWithCapacity:64];
+    NSMutableArray *sixtyFoursMetricNumberArray = [NSMutableArray arrayWithCapacity:64];
     NSNumber *dValue;
     NSNumber *metric;
     float mm = (float) .039705;
@@ -219,20 +225,27 @@ baselineAlignedWithFontOfSize:20];
             [valueNumberArray addObject:dValue];
         } else {
             [sizeStringArray addObject:dsize];
+            [sixtyFoursSizeStringArray addObject:dsize];
             CGFloat num = [[dArray objectAtIndex:0] floatValue];
             CGFloat dem = [[dArray objectAtIndex:1] floatValue];
             CGFloat demValue = num / dem;
             dValue = [NSNumber numberWithFloat:demValue];
             [valueNumberArray addObject:[dValue stringValue]];
+            [sixtyFoursValueNumberArray addObject:[dValue stringValue]];
+            metric = [NSNumber numberWithFloat:[dValue floatValue] / mm];
+            [sixtyFoursMetricNumberArray addObject:metric];
         }
         metric = [NSNumber numberWithFloat:[dValue floatValue] / mm];
         [metricNumberArray addObject:metric];
     }
 
     drillsComponent = sizeStringArray;
-//    NSLog(@"drillsComponent: %d", [drillsComponent count]);
     valuesComponent = valueNumberArray;
     metricsComponent = metricNumberArray;
+
+    sxityFoursDrillsComponent = sixtyFoursSizeStringArray;
+    sxityFoursValuesComponent = sixtyFoursValueNumberArray;
+    sxityFoursMetricsComponent = sixtyFoursMetricNumberArray;
 
     [self.sizePicker layoutSubviews];
     [self updateDecimalLabel];
@@ -255,6 +268,7 @@ baselineAlignedWithFontOfSize:20];
     [self setAdBannerView:nil];
     [self setMmInchButton:nil];
     [self setMmSizeButton:nil];
+    [self setSixtyFoursOnly:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -293,15 +307,28 @@ baselineAlignedWithFontOfSize:20];
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
 //    NSLog(@"drillsComponent: %d", [drillsComponent count]);
-    switch (component) {
-        case kSizes:
-            return [drillsComponent count];
-        case kValues:
-            return [valuesComponent count];
-        case kMetrics:
-            return [metricsComponent count];
-        default:
-            return 0;
+    if (sixtyFoursOnly.isOn) {
+        switch (component) {
+            case kSizes:
+                return [sxityFoursDrillsComponent count];
+            case kValues:
+                return [sxityFoursValuesComponent count];
+            case kMetrics:
+                return [sxityFoursMetricsComponent count];
+            default:
+                return 0;
+        }
+    } else {
+        switch (component) {
+            case kSizes:
+                return [drillsComponent count];
+            case kValues:
+                return [valuesComponent count];
+            case kMetrics:
+                return [metricsComponent count];
+            default:
+                return 0;
+        }
     }
 }
 
@@ -310,16 +337,18 @@ baselineAlignedWithFontOfSize:20];
 //    CGRect aRect = [pickerView bounds];
 //    CGFloat aSize = pickerView.bounds.size.width;
 //    return aSize / 3;
+    CGFloat aSize;
     switch (component) {
         case kSizes:
-            return 100;
+            aSize = (CGFloat) 100;
         case kValues:
-            return 90;
+            aSize = (CGFloat) 90;
         case kMetrics:
-            return 100;
+            aSize = (CGFloat) 100;
         default:
-            return 100;
+            aSize = (CGFloat) 100;
     }
+    return aSize;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -346,26 +375,48 @@ baselineAlignedWithFontOfSize:20];
 // TODO: set fractionals to red.
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSString *formattedNumberString = @"NaN";
-    switch (component) {
-        case kSizes:
-        {
-            formattedNumberString = [drillsComponent objectAtIndex:(NSUInteger) row];
-            break;
+    if (sixtyFoursOnly.isOn) {
+        switch (component) {
+            case kSizes:
+            {
+                formattedNumberString = [sxityFoursDrillsComponent objectAtIndex:(NSUInteger) row];
+                break;
+            }
+            case kValues:
+            {
+                NSNumber *decValue = [sxityFoursValuesComponent objectAtIndex:(NSUInteger) row];
+                formattedNumberString = [[NSString stringWithFormat:@"%.4lf", [decValue floatValue]] substringFromIndex:1];
+                break;
+            }
+            case kMetrics:
+            {
+                NSNumber *metric = [sxityFoursMetricsComponent objectAtIndex:(NSUInteger) row];
+                formattedNumberString = [NSString stringWithFormat:@"%.4lf", [metric floatValue]];
+                break;
+            }
         }
-        case kValues:
-        {
-            NSNumber *decValue = [valuesComponent objectAtIndex:(NSUInteger) row];
-            formattedNumberString = [[NSString stringWithFormat:@"%.4lf", [decValue floatValue]] substringFromIndex:1];
-            break;
-        }
-        case kMetrics:
-        {
-            NSNumber *metric = [metricsComponent objectAtIndex:(NSUInteger) row];
-            formattedNumberString = [NSString stringWithFormat:@"%.4lf", [metric floatValue]];
-            break;
+    } else {
+        switch (component) {
+            case kSizes:
+            {
+                formattedNumberString = [drillsComponent objectAtIndex:(NSUInteger) row];
+                break;
+            }
+            case kValues:
+            {
+                NSNumber *decValue = [valuesComponent objectAtIndex:(NSUInteger) row];
+                formattedNumberString = [[NSString stringWithFormat:@"%.4lf", [decValue floatValue]] substringFromIndex:1];
+                break;
+            }
+            case kMetrics:
+            {
+                NSNumber *metric = [metricsComponent objectAtIndex:(NSUInteger) row];
+                formattedNumberString = [NSString stringWithFormat:@"%.4lf", [metric floatValue]];
+                break;
+            }
         }
     }
-//    NSLog(@"titleForRow: %@", formattedNumberString);
+    //    NSLog(@"titleForRow: %@", formattedNumberString);
     return formattedNumberString;
 }
 
@@ -420,6 +471,77 @@ baselineAlignedWithFontOfSize:20];
     }
 }
 
+- (IBAction)sixtyFoursChanged:(id)sender {
+    NSString *foundAValue;
+    NSInteger foundAIndex = -1;
+    NSInteger sIndex = 0;
+
+    NSInteger theRow = [self.sizePicker selectedRowInComponent:0];
+    if (sixtyFoursOnly.isOn) {
+        NSLog(@"64s is On");
+        // This means we were in the big array and possibly on a value which doesn't
+        // exists in the small array. So lookup the value in the big array and search
+        // back for the nearest sixtyFour value locate theValue in the small array
+        NSString *searchValue = [drillsComponent objectAtIndex:(NSUInteger) theRow];
+        NSLog(@"Looking for %@ in the big array", searchValue);
+        for (NSString *aValue in drillsComponent) {
+            NSArray *vArray = [aValue componentsSeparatedByString:@"/"];
+            if (vArray.count == 2) {
+                foundAValue = aValue;
+                foundAIndex = sIndex;
+                NSLog(@"Found %@ at %d", foundAValue, foundAIndex);
+            }
+            if ([aValue isEqualToString:searchValue]) {
+                NSLog(@"Found search value: %@", searchValue);
+                break;
+            }
+            sIndex++;
+        }
+        if (foundAIndex != -1) {
+            NSLog(@"Looking for %@ in the small array", foundAValue);
+
+            // We found a good smaller value
+            // Now search for it in the small array and scroll to it
+            // Reset counters
+            foundAIndex = -1;
+            sIndex = 0;
+            for (NSString *aValue in sxityFoursDrillsComponent) {
+                if ([aValue isEqualToString:foundAValue]) {
+                    foundAIndex = sIndex;
+                    NSLog(@"Found %@ at %d", foundAValue, foundAIndex);
+                    break;
+                }
+                sIndex++;
+            }
+            if (foundAIndex != -1) {
+                [_sizePicker selectRow:foundAIndex inComponent:0 animated:YES];
+                [_sizePicker selectRow:foundAIndex inComponent:1 animated:YES];
+                [_sizePicker selectRow:foundAIndex inComponent:2 animated:YES];
+            }
+        }
+    } else {
+        NSLog(@"64s is Off");
+        // we were in the small array so find the row in the big array
+        NSString *searchValue = [sxityFoursDrillsComponent objectAtIndex:(NSUInteger) theRow];
+        NSLog(@"Looking for %@ in the big array", searchValue);
+        for (NSString *aValue in drillsComponent) {
+            if ([aValue isEqualToString:searchValue]) {
+                foundAIndex = sIndex;
+                NSLog(@"Found %@ at %d big:%@", searchValue, foundAIndex, [drillsComponent objectAtIndex:(NSUInteger) sIndex]);
+                break;
+            }
+            sIndex++;
+        }
+        if (foundAIndex != -1) {
+            [_sizePicker selectRow:foundAIndex inComponent:0 animated:YES];
+            [_sizePicker selectRow:foundAIndex inComponent:1 animated:YES];
+            [_sizePicker selectRow:foundAIndex inComponent:2 animated:YES];
+        }
+    }
+    [self.sizePicker reloadAllComponents];
+    NSLog(@"------------------------");
+}
+
 #pragma mark - Banner Delegate
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
     if (!self.bannerIsVisible) {
@@ -438,7 +560,7 @@ baselineAlignedWithFontOfSize:20];
         banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
         [UIView commitAnimations];
         self.bannerIsVisible = NO;
-		[TestFlight passCheckpoint:@"iAd Banner Failed"];
+        [TestFlight passCheckpoint:@"iAd Banner Failed"];
     }
 }
 

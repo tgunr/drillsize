@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0b9b09f-ca31-46f2-b0be-7f57364d5fba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize.xcodeproj/project.xcworkspace/xcuserdata/davec.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/DrillSize.xcodeproj/project.xcworkspace/xcuserdata/davec.xcuserdatad/UserInterfaceState.xcuserstate" />
+    <list default="true" id="f0b9b09f-ca31-46f2-b0be-7f57364d5fba" name="Default" comment="Added Fractional Only switch.&#10;Still hasa bug in it.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize.xcodeproj/xcuserdata/davec.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" afterPath="$PROJECT_DIR$/DrillSize.xcodeproj/xcuserdata/davec.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize/MainViewController.h" afterPath="$PROJECT_DIR$/DrillSize/MainViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize/MainViewController.m" afterPath="$PROJECT_DIR$/DrillSize/MainViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPhone.storyboard" afterPath="$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPhone.storyboard" />
     </list>
     <ignored path="DrillSize.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CoolButton.h" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../Contributed/CoolButtons/CoolButtons/CoolButton.h">
+      <file leaf-file-name="MainViewController.h" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.21087314">
+            <state line="32" column="12" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.33281735">
               <folding />
             </state>
           </provider>
@@ -38,7 +41,7 @@
       <file leaf-file-name="MainViewController.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="244" column="0" selection-start="12312" selection-end="12312" vertical-scroll-proportion="0.0">
+            <state line="529" column="122" selection-start="22957" selection-end="22957" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -123,34 +126,6 @@
       <sortByType DirectoryView.Xcode="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DrillSize" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DrillSize" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DrillSize" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="DirectoryView.Xcode">
         <subPane>
           <PATH>
@@ -283,6 +258,34 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DrillSize" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodePBXReferenceNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -299,19 +302,19 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="272" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1064" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1066" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1064" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="270" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="267" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Application.DrillSize - Debug">
-    <configuration default="false" name="DrillSize - Debug" type="AppleRunConfiguration" factoryName="Application" temporary="true" TARGET_NAME="DrillSize" CONFIG_NAME="Debug" SDK_NAME="iphonesimulator5.0" ARCH_ID="Standard" DEVICE="IPHONE" DEBUGGER="LLDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+    <configuration default="false" name="DrillSize - Debug" type="AppleRunConfiguration" factoryName="Application" temporary="true" PROJECT_NAME="DrillSize" TARGET_NAME="DrillSize" CONFIG_NAME="Debug" SDK_NAME="iphonesimulator5.0" ARCH_ID="Standard" DEVICE="IPHONE" DEBUGGER="LLDB" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <RunnerSettings RunnerId="AppRunner" />
       <ConfigurationWrapper RunnerId="AppRunner" />
@@ -337,14 +340,14 @@
         <option name="com.jetbrains.cidr.execution.StopCurrentSessionBeforeRunTaskProvider$StopCurrentSessionBeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" TARGET_NAME="DrillSize" CONFIG_NAME="Debug" SDK_NAME="iphonesimulator5.0" ARCH_ID="Standard" DEVICE="IPHONE" DEBUGGER="GDB" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="DrillSize" TARGET_NAME="DrillSize" CONFIG_NAME="Debug" SDK_NAME="iphonesimulator5.0" ARCH_ID="Standard" DEVICE="IPHONE" DEBUGGER="GDB" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <method>
         <option name="com.jetbrains.cidr.execution.BuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="com.jetbrains.cidr.execution.StopCurrentSessionBeforeRunTaskProvider$StopCurrentSessionBeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="false" name="DrillSize - iPhone" type="AppleRunConfiguration" factoryName="Application" TARGET_NAME="DrillSize" CONFIG_NAME="Debug" SDK_NAME="iphoneos5.0" ARCH_ID="PlatformStandard" DEVICE="IPHONE" DEBUGGER="GDB" REAL_DEVICE_SN="82106MNKA4S" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+    <configuration default="false" name="DrillSize - iPhone" type="AppleRunConfiguration" factoryName="Application" PROJECT_NAME="DrillSize" TARGET_NAME="DrillSize" CONFIG_NAME="Debug" SDK_NAME="iphoneos5.0" ARCH_ID="PlatformStandard" DEVICE="IPHONE" DEBUGGER="GDB" REAL_DEVICE_SN="82106MNKA4S" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <RunnerSettings RunnerId="AppRunner" />
       <ConfigurationWrapper RunnerId="AppRunner" />
@@ -408,15 +411,15 @@
     <frame x="0" y="22" width="1920" height="1125" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3273632" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3273632" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940108" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18239325" sideWeight="0.22885571" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18239325" sideWeight="0.39701492" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36616915" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2387981" sideWeight="0.44676617" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2387981" sideWeight="0.21791045" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36616915" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32999474" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34440228" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3442786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940108" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.32977587" sideWeight="0.6705989" order="3" side_tool="false" content_ui="tabs" x="100" y="100" width="1720" height="1022" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -461,7 +464,7 @@
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added rounded corners to buttons.&#10;mmInch view now functional.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Fractional Only switch.&#10;Still hasa bug in it." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -480,16 +483,10 @@
     <MESSAGE value="New row setup, now drill size are combined with fractional sizes.&#10;" />
     <MESSAGE value="mmInch view now functional.&#10;Added rounded corners to buttons." />
     <MESSAGE value="Added rounded corners to buttons.&#10;mmInch view now functional.&#10;" />
+    <MESSAGE value="Added Fractional Only switch.&#10;Still hasa bug in it." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/DrillSize/MainViewController.m</url>
-          <line>244</line>
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build/Debug-iphoneos/DrillSize.app.dSYM/Contents/Info.plist">
@@ -509,56 +506,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DrillSize/AppDelegate.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="1" selection-start="4511" selection-end="4511" vertical-scroll-proportion="0.06965944">
-          <folding />
-        </state>
+        <state line="124" column="1" selection-start="4511" selection-end="4511" vertical-scroll-proportion="0.06965944" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DrillSize/ImageViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="284" column="0" selection-start="8185" selection-end="8185" vertical-scroll-proportion="1.374613">
+        <state line="284" column="0" selection-start="8185" selection-end="8185" vertical-scroll-proportion="1.374613" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPhone.storyboard">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="270" column="64" selection-start="22462" selection-end="22462" vertical-scroll-proportion="0.18575852" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DrillSize/AppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DrillSize/ImageViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="4" selection-start="383" selection-end="383" vertical-scroll-proportion="0.09442724" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Contributed/CoolButtons/CoolButtons/CoolButton.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.21087314" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="529" column="122" selection-start="22957" selection-end="22957" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="205" selection-start="407" selection-end="407" vertical-scroll-proportion="0.2631579">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DrillSize/en.lproj/MainStoryboard_iPhone.storyboard">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="270" column="64" selection-start="22462" selection-end="22462" vertical-scroll-proportion="0.18575852">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DrillSize/AppDelegate.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DrillSize/ImageViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="4" selection-start="383" selection-end="383" vertical-scroll-proportion="0.09442724">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DrillSize/MainViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="244" column="0" selection-start="12312" selection-end="12312" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Contributed/CoolButtons/CoolButtons/CoolButton.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.21087314">
+        <state line="32" column="12" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.33281735">
           <folding />
         </state>
       </provider>
