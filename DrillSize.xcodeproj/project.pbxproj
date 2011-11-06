@@ -63,6 +63,7 @@
 		75D7215D1465AE2C00D9CAE4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		75D7215F1465AE3900D9CAE4 /* bit-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-57X57.png"; path = "../bit-57X57.png"; sourceTree = "<group>"; };
 		75D721611465AE4300D9CAE4 /* bit-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-114X114.png"; path = "../bit-114X114.png"; sourceTree = "<group>"; };
+		75D721C014669E6B00D9CAE4 /* DrillSize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DrillSize.entitlements; sourceTree = "<group>"; };
 		75E368491464A96B00586C38 /* CoolButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoolButton.h; path = ../../Contributed/CoolButtons/CoolButtons/CoolButton.h; sourceTree = "<group>"; };
 		75E3684A1464A96B00586C38 /* CoolButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoolButton.m; path = ../../Contributed/CoolButtons/CoolButtons/CoolButton.m; sourceTree = "<group>"; };
 		75F54B6714592EF800EC50C8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -124,6 +125,7 @@
 		7505890214577FFD00013A42 /* DrillSize */ = {
 			isa = PBXGroup;
 			children = (
+				75D721C014669E6B00D9CAE4 /* DrillSize.entitlements */,
 				75D721111464F9D800D9CAE4 /* GradientButton.h */,
 				75D721121464F9D800D9CAE4 /* GradientButton.m */,
 				75E368491464A96B00586C38 /* CoolButton.h */,
@@ -390,6 +392,45 @@
 			};
 			name = Distribution;
 		};
+		75D721BE14668CFF00D9CAE4 /* Release AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: polyMicro Systems";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "0AD5DC0E-E9C1-4407-8C2F-89DE6A8A45BA";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release AdHoc";
+		};
+		75D721BF14668CFF00D9CAE4 /* Release AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: polyMicro Systems";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: polyMicro Systems";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DrillSize/DrillSize-Prefix.pch";
+				INFOPLIST_FILE = "DrillSize/DrillSize-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0AD5DC0E-E9C1-4407-8C2F-89DE6A8A45BA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0AD5DC0E-E9C1-4407-8C2F-89DE6A8A45BA";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Release AdHoc";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -398,6 +439,7 @@
 			buildConfigurations = (
 				7505891D14577FFE00013A42 /* Debug */,
 				7505891E14577FFE00013A42 /* Release */,
+				75D721BE14668CFF00D9CAE4 /* Release AdHoc */,
 				75D083281459E5260094E89E /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -408,6 +450,7 @@
 			buildConfigurations = (
 				7505892014577FFE00013A42 /* Debug */,
 				7505892114577FFE00013A42 /* Release */,
+				75D721BF14668CFF00D9CAE4 /* Release AdHoc */,
 				75D083291459E5260094E89E /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
