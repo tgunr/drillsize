@@ -13,6 +13,7 @@
 
 @synthesize delegate;
 @synthesize mainViewController;
+@synthesize feedBackButton;
 
 - (void)awakeFromNib
 {
@@ -32,11 +33,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-	
+	[TestFlight passCheckpoint:@"infoView"];
 }
 
 - (void)viewDidUnload
 {
+	[self setFeedBackButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -79,6 +81,10 @@
 - (IBAction)done:(id)sender
 {
     [self.delegate imageViewControllerDidFinish:self];
+}
+
+- (IBAction)feedBack:(id)sender {
+	[TestFlight openFeedbackView];
 }
 
 @end
@@ -128,6 +134,7 @@
     self.imageScrollView.maximumZoomScale=6.0;
     self.imageScrollView.contentSize=CGSizeMake(1138, 112);
     self.imageScrollView.delegate = self;
+	[TestFlight passCheckpoint:@"inchMMView"];
 }
 
 - (void)viewDidUnload {
@@ -256,6 +263,7 @@
 //	label.transform = CGAffineTransformMakeRotation( M_PI/4 );
 	
 	[self.view addSubview:diamLabelView];
+	[TestFlight passCheckpoint:@"sizeMMView"];
 }
 
 - (void)viewDidUnload {

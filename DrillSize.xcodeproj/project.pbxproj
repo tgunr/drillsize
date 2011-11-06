@@ -19,6 +19,9 @@
 		7505891914577FFE00013A42 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891814577FFE00013A42 /* MainViewController.m */; };
 		7505891C14577FFE00013A42 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891B14577FFE00013A42 /* ImageViewController.m */; };
 		757FF8DD145E7A6D001D3F78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */; };
+		7599C5011466EF1F00B50B09 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7599C4FD1466EF1F00B50B09 /* libTestFlight.a */; };
+		7599C5021466EF2000B50B09 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7599C4FE1466EF1F00B50B09 /* README.txt */; };
+		7599C5031466EF2000B50B09 /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7599C4FF1466EF1F00B50B09 /* release_notes.txt */; };
 		75D721131464F9D800D9CAE4 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D721121464F9D800D9CAE4 /* GradientButton.m */; };
 		75D7214D1465ABEB00D9CAE4 /* mm-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D721491465ABEB00D9CAE4 /* mm-inch.png */; };
 		75D7214E1465ABEB00D9CAE4 /* size-diam.png in Resources */ = {isa = PBXBuildFile; fileRef = 75D7214A1465ABEB00D9CAE4 /* size-diam.png */; };
@@ -53,6 +56,10 @@
 		7505891A14577FFE00013A42 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7505891B14577FFE00013A42 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7599C4FD1466EF1F00B50B09 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		7599C4FE1466EF1F00B50B09 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		7599C4FF1466EF1F00B50B09 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
+		7599C5001466EF1F00B50B09 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		75D721111464F9D800D9CAE4 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientButton.h; path = "../../Contributed/KristopherJohnson-gradientbuttons-fc52790e5188/Classes/GradientButton.h"; sourceTree = "<group>"; };
 		75D721121464F9D800D9CAE4 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GradientButton.m; path = "../../Contributed/KristopherJohnson-gradientbuttons-fc52790e5188/Classes/GradientButton.m"; sourceTree = "<group>"; };
 		75D721491465ABEB00D9CAE4 /* mm-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mm-inch.png"; path = "Resources/mm-inch.png"; sourceTree = "<group>"; };
@@ -63,7 +70,6 @@
 		75D7215D1465AE2C00D9CAE4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		75D7215F1465AE3900D9CAE4 /* bit-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-57X57.png"; path = "../bit-57X57.png"; sourceTree = "<group>"; };
 		75D721611465AE4300D9CAE4 /* bit-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bit-114X114.png"; path = "../bit-114X114.png"; sourceTree = "<group>"; };
-		75D721C014669E6B00D9CAE4 /* DrillSize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DrillSize.entitlements; sourceTree = "<group>"; };
 		75E368491464A96B00586C38 /* CoolButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoolButton.h; path = ../../Contributed/CoolButtons/CoolButtons/CoolButton.h; sourceTree = "<group>"; };
 		75E3684A1464A96B00586C38 /* CoolButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoolButton.m; path = ../../Contributed/CoolButtons/CoolButtons/CoolButton.m; sourceTree = "<group>"; };
 		75F54B6714592EF800EC50C8 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -84,6 +90,7 @@
 				750588FF14577FFD00013A42 /* CoreGraphics.framework in Frameworks */,
 				7505890114577FFD00013A42 /* CoreData.framework in Frameworks */,
 				75F54B6714592EF800EC50C9 /* iAd.framework in Frameworks */,
+				7599C5011466EF1F00B50B09 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +100,7 @@
 		750588EB14577FFC00013A42 = {
 			isa = PBXGroup;
 			children = (
+				7599C4FC1466EF1F00B50B09 /* TestFlightSDK0 */,
 				7505890214577FFD00013A42 /* DrillSize */,
 				7505890314577FFD00013A42 /* Supporting Files */,
 				75D721481465AB1800D9CAE4 /* Resources */,
@@ -125,7 +133,6 @@
 		7505890214577FFD00013A42 /* DrillSize */ = {
 			isa = PBXGroup;
 			children = (
-				75D721C014669E6B00D9CAE4 /* DrillSize.entitlements */,
 				75D721111464F9D800D9CAE4 /* GradientButton.h */,
 				75D721121464F9D800D9CAE4 /* GradientButton.m */,
 				75E368491464A96B00586C38 /* CoolButton.h */,
@@ -156,6 +163,18 @@
 			);
 			name = "Supporting Files";
 			path = DrillSize;
+			sourceTree = "<group>";
+		};
+		7599C4FC1466EF1F00B50B09 /* TestFlightSDK0 */ = {
+			isa = PBXGroup;
+			children = (
+				7599C4FD1466EF1F00B50B09 /* libTestFlight.a */,
+				7599C4FE1466EF1F00B50B09 /* README.txt */,
+				7599C4FF1466EF1F00B50B09 /* release_notes.txt */,
+				7599C5001466EF1F00B50B09 /* TestFlight.h */,
+			);
+			name = TestFlightSDK0;
+			path = ../SDK/TestFlightSDK0;
 			sourceTree = "<group>";
 		};
 		75D721481465AB1800D9CAE4 /* Resources */ = {
@@ -235,6 +254,8 @@
 				75D7215E1465AE2C00D9CAE4 /* Default.png in Resources */,
 				75D721601465AE3900D9CAE4 /* bit-57X57.png in Resources */,
 				75D721621465AE4400D9CAE4 /* bit-114X114.png in Resources */,
+				7599C5021466EF2000B50B09 /* README.txt in Resources */,
+				7599C5031466EF2000B50B09 /* release_notes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +357,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrillSize/DrillSize-Prefix.pch";
 				INFOPLIST_FILE = "DrillSize/DrillSize-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../SDK/TestFlightSDK0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -348,6 +373,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrillSize/DrillSize-Prefix.pch";
 				INFOPLIST_FILE = "DrillSize/DrillSize-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../SDK/TestFlightSDK0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -385,6 +414,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrillSize/DrillSize-Prefix.pch";
 				INFOPLIST_FILE = "DrillSize/DrillSize-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../SDK/TestFlightSDK0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3047E0D1-A764-45B2-AF66-8CAC4AA5A2BE";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -423,9 +456,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrillSize/DrillSize-Prefix.pch";
 				INFOPLIST_FILE = "DrillSize/DrillSize-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../SDK/TestFlightSDK0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0AD5DC0E-E9C1-4407-8C2F-89DE6A8A45BA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0AD5DC0E-E9C1-4407-8C2F-89DE6A8A45BA";
+				PROVISIONING_PROFILE = "7A2529CA-B47B-4428-AF4F-7A855B2762FB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7A2529CA-B47B-4428-AF4F-7A855B2762FB";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

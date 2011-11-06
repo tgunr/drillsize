@@ -20,8 +20,10 @@
 
 @property (weak, nonatomic) IBOutlet id <ImageViewControllerDelegate> delegate;
 @property (strong) MainViewController *mainViewController;
+@property (weak, nonatomic) IBOutlet GradientButton *feedBackButton;
 
 - (IBAction)done:(id)sender;
+- (IBAction)feedBack:(id)sender;
 
 @end
 

@@ -22,6 +22,7 @@
     // Override point for customization after application launch.
 	MainViewController *controller = (MainViewController *)self.window.rootViewController;
 	controller.managedObjectContext = self.managedObjectContext;
+	[TestFlight takeOff:@"c92a6bb6a055a85b16708ed7d084302b_MzkwODkyMDExLTExLTA2IDA5OjE5OjIwLjA2NDQ3OA"];
     return YES;
 }
 							

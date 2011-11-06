@@ -438,6 +438,7 @@ baselineAlignedWithFontOfSize:20];
         banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
         [UIView commitAnimations];
         self.bannerIsVisible = NO;
+		[TestFlight passCheckpoint:@"iAd Banner Failed"];
     }
 }
 

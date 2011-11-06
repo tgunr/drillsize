@@ -141,9 +141,29 @@ Press the buttons and scroll the view to see a visual representation.</string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" id="jfY-fn-EkZ" customClass="GradientButton">
+                                <rect key="frame" x="77" y="292" width="166" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.56862747669219971" green="0.7725490927696228" blue="0.69411766529083252" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Testflight Feedback">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="feedBack:" destination="6" eventType="touchUpInside" id="h7Y-XS-CRm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.62745100259999997" green="0.66666668650000005" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="feedBackButton" destination="jfY-fn-EkZ" id="s3p-mT-GRQ"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-38" y="801"/>
@@ -306,7 +326,9 @@ Press the buttons and scroll the view to see a visual representation.</string>
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
             <relationships>
                 <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="feedBack:"/>
                 <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="feedBackButton" candidateClass="GradientButton"/>
             </relationships>
         </class>
         <class className="InchMMViewController" superclassName="ImageViewController">
