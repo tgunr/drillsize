@@ -58,7 +58,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="hAf-5n-Vh1" customClass="GradientButton">
                                 <rect key="frame" x="18" y="338" width="100" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.62745100259780884" green="0.66666668653488159" blue="0.78039222955703735" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.49803924560546875" blue="0.91764712333679199" alpha="1" colorSpace="deviceRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
                                 </accessibility>
@@ -77,7 +77,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vcs-VJ-Cim" customClass="GradientButton">
                                 <rect key="frame" x="204" y="338" width="98" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.62745100259780884" green="0.66666668653488159" blue="0.78039222955703735" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.49803924560000001" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES"/>
                                 </accessibility>
@@ -333,6 +333,49 @@ Press the buttons and scroll the view to see a visual representation.</string>
         <image name="size-diam.png" width="28" height="297"/>
         <image name="sizes.png" width="652" height="311"/>
     </resources>
+    <classes>
+        <class className="GradientButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
+        </class>
+        <class className="ImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="feedBack:"/>
+                <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="feedBackButton" candidateClass="GradientButton"/>
+            </relationships>
+        </class>
+        <class className="InchMMViewController" superclassName="ImageViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InchMMViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="finish:"/>
+                <relationship kind="outlet" name="imageScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sixtyFoursChanged:"/>
+                <relationship kind="action" name="togglePopover:"/>
+                <relationship kind="outlet" name="adBannerView" candidateClass="ADBannerView"/>
+                <relationship kind="outlet" name="mmInchButton" candidateClass="GradientButton"/>
+                <relationship kind="outlet" name="mmSizeButton" candidateClass="GradientButton"/>
+                <relationship kind="outlet" name="sixtyFoursOnly" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="sizePicker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="SizeMMViewController" superclassName="ImageViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SizeMMViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="finish:"/>
+                <relationship kind="outlet" name="diamLabelView" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

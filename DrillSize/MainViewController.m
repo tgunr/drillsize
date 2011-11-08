@@ -252,7 +252,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     [self.sizePicker addOffsetLabel:@"size"
                        ofSize:12
                   toComponent:0
-                leftAlignedAt:20
+                leftAlignedAt:34
 			  bottomAlignedAt:7];
 }
 
@@ -260,7 +260,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     [self.sizePicker addOffsetLabel:@"in"
                        ofSize:12
                   toComponent:1
-                leftAlignedAt:20
+                leftAlignedAt:40
 			  bottomAlignedAt:7];
 }
 
@@ -268,7 +268,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     [self.sizePicker addOffsetLabel:@"mm"
                        ofSize:12
                   toComponent:2
-                leftAlignedAt:20
+                leftAlignedAt:35
 			  bottomAlignedAt:7];
 }
 
@@ -552,27 +552,27 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 
     NSInteger theRow = [self.sizePicker selectedRowInComponent:0];
     if (sixtyFoursOnly.isOn) {
-        NSLog(@"64s is On");
+        //NSLog(@"64s is On");
         // This means we were in the big array and possibly on a value which doesn't
         // exists in the small array. So lookup the value in the big array and search
         // back for the nearest sixtyFour value locate theValue in the small array
         NSString *searchValue = [drillsComponent objectAtIndex:(NSUInteger) theRow];
-        NSLog(@"Looking for %@ in the big array", searchValue);
+        //NSLog(@"Looking for %@ in the big array", searchValue);
         for (NSString *aValue in drillsComponent) {
             NSArray *vArray = [aValue componentsSeparatedByString:@"/"];
             if (vArray.count == 2) {
                 foundAValue = aValue;
                 foundAIndex = sIndex;
-                NSLog(@"Found %@ at %d", foundAValue, foundAIndex);
+                //NSLog(@"Found %@ at %d", foundAValue, foundAIndex);
             }
             if ([aValue isEqualToString:searchValue]) {
-                NSLog(@"Found search value: %@", searchValue);
+                //NSLog(@"Found search value: %@", searchValue);
                 break;
             }
             sIndex++;
         }
         if (foundAIndex != -1) {
-            NSLog(@"Looking for %@ in the small array", foundAValue);
+            //NSLog(@"Looking for %@ in the small array", foundAValue);
 
             // We found a good smaller value
             // Now search for it in the small array and scroll to it
@@ -582,7 +582,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
             for (NSString *aValue in sixtyFoursDrillsComponent) {
                 if ([aValue isEqualToString:foundAValue]) {
                     foundAIndex = sIndex;
-                    NSLog(@"Found %@ at %d", foundAValue, foundAIndex);
+                    //NSLog(@"Found %@ at %d", foundAValue, foundAIndex);
                     break;
                 }
                 sIndex++;
@@ -595,14 +595,14 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
             }
         }
     } else {
-        NSLog(@"64s is Off");
+        //NSLog(@"64s is Off");
         // we were in the small array so find the row in the big array
         NSString *searchValue = [sixtyFoursDrillsComponent objectAtIndex:(NSUInteger) theRow];
-        NSLog(@"Looking for %@ in the big array", searchValue);
+        //NSLog(@"Looking for %@ in the big array", searchValue);
         for (NSString *aValue in drillsComponent) {
             if ([aValue isEqualToString:searchValue]) {
                 foundAIndex = sIndex;
-                NSLog(@"Found %@ at %d big:%@", searchValue, foundAIndex, [drillsComponent objectAtIndex:(NSUInteger) sIndex]);
+                //NSLog(@"Found %@ at %d big:%@", searchValue, foundAIndex, [drillsComponent objectAtIndex:(NSUInteger) sIndex]);
                 break;
             }
             sIndex++;
@@ -614,7 +614,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
             [_sizePicker selectRow:foundAIndex inComponent:2 animated:YES];
         }
     }
-    NSLog(@"------------------------");
+    //NSLog(@"------------------------");
 }
 
 #pragma mark - Banner Delegate
@@ -640,7 +640,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 }
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
-    NSLog(@"Banner view is beginning an ad action");
+    //NSLog(@"Banner view is beginning an ad action");
     BOOL shouldExecuteAction = YES; //[self allowActionToRun]; // your application implements this method
     if (!willLeave && shouldExecuteAction) {
         // insert code here to suspend any services that might conflict with the advertisement
