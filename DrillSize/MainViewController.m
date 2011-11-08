@@ -588,6 +588,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
                 sIndex++;
             }
             if (foundAIndex != -1) {
+				[self.sizePicker reloadAllComponents];
                 [_sizePicker selectRow:foundAIndex inComponent:0 animated:YES];
                 [_sizePicker selectRow:foundAIndex inComponent:1 animated:YES];
                 [_sizePicker selectRow:foundAIndex inComponent:2 animated:YES];
@@ -607,12 +608,12 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
             sIndex++;
         }
         if (foundAIndex != -1) {
+			[self.sizePicker reloadAllComponents];
             [_sizePicker selectRow:foundAIndex inComponent:0 animated:YES];
             [_sizePicker selectRow:foundAIndex inComponent:1 animated:YES];
             [_sizePicker selectRow:foundAIndex inComponent:2 animated:YES];
         }
     }
-    [self.sizePicker reloadAllComponents];
     NSLog(@"------------------------");
 }
 
