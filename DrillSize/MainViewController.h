@@ -27,6 +27,8 @@
 // drillSizesComponent created.
 - (void)addLabel:(NSString *)label ofSize:(CGFloat)pointSize toComponent:(NSInteger)component leftAlignedAt:(CGFloat)offset baselineAlignedWithFontOfSize:(CGFloat)titlePointSize;
 
+- (void)addOffsetLabel:(NSString *)label ofSize:(CGFloat)pointSize toComponent:(NSInteger)component leftAlignedAt:(CGFloat)hoffset bottomAlignedAt:(CGFloat)voffset;
+
 // A helper method for your delegate's "pickerView:viewForRow:forComponent:reusingView:".
 // Creates a propertly positioned right-aligned label of the given size, and also handles reuse.
 // The actual UILabel is a child of the returned view, use [returnedView viewWithTag:1] to retrieve the label.
@@ -60,9 +62,9 @@
 @property(copy) NSArray *valuesComponent;
 @property(copy) NSArray *metricsComponent;
 
-@property(copy) NSArray *sxityFoursDrillsComponent;
-@property(copy) NSArray *sxityFoursValuesComponent;
-@property(copy) NSArray *sxityFoursMetricsComponent;
+@property(copy) NSArray *sixtyFoursDrillsComponent;
+@property(copy) NSArray *sixtyFoursValuesComponent;
+@property(copy) NSArray *sixtyFoursMetricsComponent;
 
 - (IBAction)togglePopover:(id)sender;
 

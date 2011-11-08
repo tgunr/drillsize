@@ -97,7 +97,7 @@
                                 <rect key="frame" x="227" y="63" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="sixtyFoursChanged:" destination="2" eventType="valueChanged" id="aTa-RW-Bnb"/>
+                                    <action selector="sixtyFoursChanged:" destination="2" eventType="valueChanged" id="Zey-4A-kss"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Fractional Only" lineBreakMode="tailTruncation" minimumFontSize="10" id="WpN-3p-ALn">
@@ -333,49 +333,6 @@ Press the buttons and scroll the view to see a visual representation.</string>
         <image name="size-diam.png" width="28" height="297"/>
         <image name="sizes.png" width="652" height="311"/>
     </resources>
-    <classes>
-        <class className="GradientButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
-        </class>
-        <class className="ImageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="action" name="feedBack:"/>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="feedBackButton" candidateClass="GradientButton"/>
-            </relationships>
-        </class>
-        <class className="InchMMViewController" superclassName="ImageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InchMMViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="finish:"/>
-                <relationship kind="outlet" name="imageScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sixtyFoursChanged:"/>
-                <relationship kind="action" name="togglePopover:"/>
-                <relationship kind="outlet" name="adBannerView" candidateClass="ADBannerView"/>
-                <relationship kind="outlet" name="mmInchButton" candidateClass="GradientButton"/>
-                <relationship kind="outlet" name="mmSizeButton" candidateClass="GradientButton"/>
-                <relationship kind="outlet" name="sixtyFoursOnly" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="sizePicker" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
-        <class className="SizeMMViewController" superclassName="ImageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SizeMMViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="finish:"/>
-                <relationship kind="outlet" name="diamLabelView" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DrillSize/MainViewController.m"
-         timestampString = "342303544.208623"
+         timestampString = "342402323.241581"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "527"
-         endingLineNumber = "527"
+         startingLineNumber = "568"
+         endingLineNumber = "568"
          landmarkName = "-sixtyFoursChanged:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DrillSize/MainViewController.m"
-         timestampString = "342302778.695531"
+         timestampString = "342402323.241581"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "494"
-         endingLineNumber = "494"
+         startingLineNumber = "572"
+         endingLineNumber = "572"
          landmarkName = "-sixtyFoursChanged:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DrillSize/MainViewController.m"
-         timestampString = "342302744.482408"
+         timestampString = "342402323.241581"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "498"
-         endingLineNumber = "498"
+         startingLineNumber = "585"
+         endingLineNumber = "585"
          landmarkName = "-sixtyFoursChanged:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -51,11 +51,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DrillSize/MainViewController.m"
-         timestampString = "342303060.990944"
+         timestampString = "342402323.241581"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "511"
-         endingLineNumber = "511"
+         startingLineNumber = "580"
+         endingLineNumber = "580"
          landmarkName = "-sixtyFoursChanged:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -65,12 +65,40 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "DrillSize/MainViewController.m"
-         timestampString = "342304070.76942"
+         timestampString = "342391065.07314"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "506"
-         endingLineNumber = "506"
-         landmarkName = "-sixtyFoursChanged:"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
+         landmarkName = "-viewForShadedLabelWithText:ofSize:forComponent:rightAlignedAt:reusingView:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DrillSize/MainViewController.m"
+         timestampString = "342391706.119961"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
+         landmarkName = "-addLabel:ofSize:toComponent:leftAlignedAt:bottomAlignedAt:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "DrillSize/MainViewController.m"
+         timestampString = "342402638.124351"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "172"
+         endingLineNumber = "172"
+         landmarkName = "-addOffsetLabel:ofSize:toComponent:leftAlignedAt:bottomAlignedAt:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

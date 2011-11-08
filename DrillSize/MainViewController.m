@@ -92,12 +92,86 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     CGFloat labelHeight = [@"X" sizeWithFont:[UIFont boldSystemFontOfSize:pointSize]].height;
 
     UILabel *labelView = [self shadedLabelWithText:label ofSize:pointSize];
-    labelView.frame = CGRectMake(offset,
+	CGRect labelRect =CGRectMake(offset,
             (self.bounds.size.height - baselineHeight) / 2 + (baselineHeight - labelHeight) - 1,
             labelView.frame.size.width,
             labelView.frame.size.height);
+	labelView.frame = labelRect;
     labelView.tag = tag;
 
+    UIView *selectionBarView = nil;
+    NSMutableArray *selectionBars = [NSMutableArray array];
+    for (UIView *subview in self.subviews) {
+        if ([[[subview class] description] isEqualToString:kSelectionBarClassName])
+            [selectionBars addObject:subview];
+    }
+    if ([selectionBars count] == n) {
+        [selectionBars sortUsingFunction:compareViews context:NULL];
+        selectionBarView = [selectionBars objectAtIndex:(NSUInteger) component];
+    }
+    if (oldLabel != nil) {
+        [UIView beginAnimations:nil context:(__bridge void *) oldLabel];
+        [UIView setAnimationDuration:0.25];
+        [UIView setAnimationDelegate:self];
+        [UIView setAnimationDidStopSelector:@selector(YS_barLabelHideAnimationDidStop:finished:context:)];
+        oldLabel.alpha = 0.0f;
+        [UIView commitAnimations];
+    }
+    // if the selection bar hack stops working, degrade to using 60% alpha
+    CGFloat normalAlpha = (selectionBarView == nil ? 0.6f : 1.0f);
+    if (selectionBarView != nil)
+        [self insertSubview:labelView aboveSubview:selectionBarView];
+    else
+        [self addSubview:labelView];
+    if (oldLabel != nil) {
+        labelView.alpha = 0.0f;
+        [UIView beginAnimations:nil context:(__bridge void *) oldLabel];
+        [UIView setAnimationDuration:0.25];
+        [UIView setAnimationDelay:0.25];
+        labelView.alpha = normalAlpha;
+        [UIView commitAnimations];
+    } else {
+        labelView.alpha = normalAlpha;
+    }
+}
+
+- (void)addOffsetLabel:(NSString *)label ofSize:(CGFloat)pointSize toComponent:(NSInteger)component leftAlignedAt:(CGFloat)hoffset bottomAlignedAt:(CGFloat)voffset {
+    NSParameterAssert(component < [self numberOfComponents]);
+	
+    NSInteger tag = kMagicTag + component;
+    UILabel *oldLabel = (UILabel *) [self viewWithTag:tag];
+    if (oldLabel != nil && [oldLabel.text isEqualToString:label])
+        return;
+	
+    NSInteger n = [self numberOfComponents];
+    CGFloat total = 0.0;
+	CGSize rowSize;
+	CGFloat labelhoffset = hoffset;
+    for (int c = 0; c < component; c++)
+        labelhoffset += [self.delegate pickerView:self widthForComponent:c];
+    for (int c = 0; c < n; c++) {
+        total += [self.delegate pickerView:self widthForComponent:c];
+		rowSize = [self rowSizeForComponent:c];
+	}	
+	CGRect myBounds = self.bounds;
+	CGSize mySize = myBounds.size;
+	CGFloat myWidth = mySize.width;
+    labelhoffset += (myWidth - total) / 2;
+	
+    labelhoffset += 2 * component; // internal UIPicker metrics, measured on a screenshot
+    labelhoffset += 4; // add a gap
+	
+//    CGFloat baselineHeight = [@"X" sizeWithFont:[UIFont boldSystemFontOfSize:voffset]].height;
+//    CGFloat labelHeight = [@"X" sizeWithFont:[UIFont boldSystemFontOfSize:pointSize]].height;
+	
+    UILabel *labelView = [self shadedLabelWithText:label ofSize:pointSize];
+	CGRect labelRect =CGRectMake((labelhoffset + hoffset),
+								 (mySize.height / 2) + voffset,
+								 labelView.frame.size.width,
+								 labelView.frame.size.height);
+	labelView.frame = labelRect;
+    labelView.tag = tag;
+	
     UIView *selectionBarView = nil;
     NSMutableArray *selectionBars = [NSMutableArray array];
     for (UIView *subview in self.subviews) {
@@ -152,9 +226,9 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 @synthesize drillsComponent;
 @synthesize valuesComponent;
 @synthesize metricsComponent;
-@synthesize sxityFoursDrillsComponent;
-@synthesize sxityFoursValuesComponent;
-@synthesize sxityFoursMetricsComponent;
+@synthesize sixtyFoursDrillsComponent;
+@synthesize sixtyFoursValuesComponent;
+@synthesize sixtyFoursMetricsComponent;
 @synthesize bannerIsVisible;
 
 - (void)didReceiveMemoryWarning {
@@ -175,27 +249,27 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 //        }
 //    }
 //    [self.sizePicker addLabel:[NSString stringWithFormat:@"%@ in", suffix]
-    [self.sizePicker addLabel:@"size"
+    [self.sizePicker addOffsetLabel:@"size"
                        ofSize:12
                   toComponent:0
-                leftAlignedAt:65
-baselineAlignedWithFontOfSize:20];
+                leftAlignedAt:20
+			  bottomAlignedAt:7];
 }
 
 - (void)updateFractionLabel {
-    [self.sizePicker addLabel:@"in"
+    [self.sizePicker addOffsetLabel:@"in"
                        ofSize:12
                   toComponent:1
-                leftAlignedAt:67
-baselineAlignedWithFontOfSize:20];
+                leftAlignedAt:20
+			  bottomAlignedAt:7];
 }
 
 - (void)updateMetricLabel {
-    [self.sizePicker addLabel:@"mm"
+    [self.sizePicker addOffsetLabel:@"mm"
                        ofSize:12
                   toComponent:2
-                leftAlignedAt:68
-baselineAlignedWithFontOfSize:20];
+                leftAlignedAt:20
+			  bottomAlignedAt:7];
 }
 
 - (void)viewDidLoad {
@@ -243,9 +317,9 @@ baselineAlignedWithFontOfSize:20];
     valuesComponent = valueNumberArray;
     metricsComponent = metricNumberArray;
 
-    sxityFoursDrillsComponent = sixtyFoursSizeStringArray;
-    sxityFoursValuesComponent = sixtyFoursValueNumberArray;
-    sxityFoursMetricsComponent = sixtyFoursMetricNumberArray;
+    sixtyFoursDrillsComponent = sixtyFoursSizeStringArray;
+    sixtyFoursValuesComponent = sixtyFoursValueNumberArray;
+    sixtyFoursMetricsComponent = sixtyFoursMetricNumberArray;
 
     [self.sizePicker layoutSubviews];
     [self updateDecimalLabel];
@@ -310,11 +384,11 @@ baselineAlignedWithFontOfSize:20];
     if (sixtyFoursOnly.isOn) {
         switch (component) {
             case kSizes:
-                return [sxityFoursDrillsComponent count];
+                return [sixtyFoursDrillsComponent count];
             case kValues:
-                return [sxityFoursValuesComponent count];
+                return [sixtyFoursValuesComponent count];
             case kMetrics:
-                return [sxityFoursMetricsComponent count];
+                return [sixtyFoursMetricsComponent count];
             default:
                 return 0;
         }
@@ -379,18 +453,18 @@ baselineAlignedWithFontOfSize:20];
         switch (component) {
             case kSizes:
             {
-                formattedNumberString = [sxityFoursDrillsComponent objectAtIndex:(NSUInteger) row];
+                formattedNumberString = [sixtyFoursDrillsComponent objectAtIndex:(NSUInteger) row];
                 break;
             }
             case kValues:
             {
-                NSNumber *decValue = [sxityFoursValuesComponent objectAtIndex:(NSUInteger) row];
+                NSNumber *decValue = [sixtyFoursValuesComponent objectAtIndex:(NSUInteger) row];
                 formattedNumberString = [[NSString stringWithFormat:@"%.4lf", [decValue floatValue]] substringFromIndex:1];
                 break;
             }
             case kMetrics:
             {
-                NSNumber *metric = [sxityFoursMetricsComponent objectAtIndex:(NSUInteger) row];
+                NSNumber *metric = [sixtyFoursMetricsComponent objectAtIndex:(NSUInteger) row];
                 formattedNumberString = [NSString stringWithFormat:@"%.4lf", [metric floatValue]];
                 break;
             }
@@ -505,7 +579,7 @@ baselineAlignedWithFontOfSize:20];
             // Reset counters
             foundAIndex = -1;
             sIndex = 0;
-            for (NSString *aValue in sxityFoursDrillsComponent) {
+            for (NSString *aValue in sixtyFoursDrillsComponent) {
                 if ([aValue isEqualToString:foundAValue]) {
                     foundAIndex = sIndex;
                     NSLog(@"Found %@ at %d", foundAValue, foundAIndex);
@@ -522,7 +596,7 @@ baselineAlignedWithFontOfSize:20];
     } else {
         NSLog(@"64s is Off");
         // we were in the small array so find the row in the big array
-        NSString *searchValue = [sxityFoursDrillsComponent objectAtIndex:(NSUInteger) theRow];
+        NSString *searchValue = [sixtyFoursDrillsComponent objectAtIndex:(NSUInteger) theRow];
         NSLog(@"Looking for %@ in the big array", searchValue);
         for (NSString *aValue in drillsComponent) {
             if ([aValue isEqualToString:searchValue]) {
