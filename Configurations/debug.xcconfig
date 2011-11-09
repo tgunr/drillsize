@@ -1,0 +1,5 @@
+BUILD_NUMBER = 19
+VERSION_NUMBER = 1.0b5
+SU_SITE = mp.polymicro.net
+SU_PATH = sites/pdfgarden.com/updates
+SU_FEED = updates.xml

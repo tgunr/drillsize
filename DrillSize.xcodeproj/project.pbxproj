@@ -18,6 +18,8 @@
 		7505891614577FFE00013A42 /* DrillSize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */; };
 		7505891914577FFE00013A42 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891814577FFE00013A42 /* MainViewController.m */; };
 		7505891C14577FFE00013A42 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891B14577FFE00013A42 /* ImageViewController.m */; };
+		75444FED146AF9CD00460787 /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 75444FEB146AF9CD00460787 /* debug.xcconfig */; };
+		75444FEE146AF9CD00460787 /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 75444FEC146AF9CD00460787 /* release.xcconfig */; };
 		757FF8DD145E7A6D001D3F78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */; };
 		7599C5011466EF1F00B50B09 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7599C4FD1466EF1F00B50B09 /* libTestFlight.a */; };
 		7599C5021466EF2000B50B09 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7599C4FE1466EF1F00B50B09 /* README.txt */; };
@@ -55,6 +57,8 @@
 		7505891814577FFE00013A42 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MainViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7505891A14577FFE00013A42 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		7505891B14577FFE00013A42 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		75444FEB146AF9CD00460787 /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = Configurations/debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		75444FEC146AF9CD00460787 /* release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = release.xcconfig; path = Configurations/release.xcconfig; sourceTree = SOURCE_ROOT; };
 		757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7599C4FD1466EF1F00B50B09 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		7599C4FE1466EF1F00B50B09 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 		7505890314577FFD00013A42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				75444FEB146AF9CD00460787 /* debug.xcconfig */,
+				75444FEC146AF9CD00460787 /* release.xcconfig */,
 				7505891414577FFE00013A42 /* DrillSize.xcdatamodeld */,
 				7505890414577FFD00013A42 /* DrillSize-Info.plist */,
 				7505890514577FFE00013A42 /* InfoPlist.strings */,
@@ -203,6 +209,7 @@
 				750588F214577FFD00013A42 /* Sources */,
 				750588F314577FFD00013A42 /* Frameworks */,
 				750588F414577FFD00013A42 /* Resources */,
+				75444FE9146AF33200460787 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,10 +263,28 @@
 				75D721621465AE4400D9CAE4 /* bit-114X114.png in Resources */,
 				7599C5021466EF2000B50B09 /* README.txt in Resources */,
 				7599C5031466EF2000B50B09 /* release_notes.txt in Resources */,
+				75444FED146AF9CD00460787 /* debug.xcconfig in Resources */,
+				75444FEE146AF9CD00460787 /* release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75444FE9146AF33200460787 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -x\n\n# Test for kill prefs file on each build\necho \"BUILD_NUMBER: $BUILD_NUMBER\"\necho \"VERSION_NUMBER: $VERSION_NUMBER\"\necho \"SU_FEED: $SU_SITE/$SU_PATH/$SU_FEED\" | sed -e 's?//?/?'\n\n#if [[ \"$CONFIGURATION\" == 'Debug New Prefs' ]]; then\n#if [ -e \"$HOME/Library/Preferences/com.polymicrosystems.pdfgarden.plist\" ]; then\n#if [ -e \"$HOME/Library/Preferences/com.polymicrosystems.pdfgarden.plist.1\" ]; then\n#logger \"Removing prefs\"\n#/bin/rm \"$HOME/Library/Preferences/com.polymicrosystems.pdfgarden.plist\"\n#else\n#logger \"Moving prefs aside\"\n#/bin/mv \"$HOME/Library/Preferences/com.polymicrosystems.pdfgarden.plist\" \"$HOME/Library/Preferences/com.polymicrosystems.pdfgarden.plist.1\"\n#fi\n#fi\n#else\n# If no longer killing prefs, check for prexisting pref file and restore it\n#if [[ -e \"$HOME/Library/Preferences/com.polymicrosystems.pdfgarden.plist.1\" ]]; then\n#logger \"restoring old prefs\"\n#/bin/mv \"$HOME/Library/Preferences/com.polymicrosystems.pdfgarden.plist.1\" \"$HOME/Library/Preferences/com.polymicrosystems.pdfgarden.plist\"\n#fi\n#fi\n\n### If not releasing increment build number\nif [[ \"$CONFIGURATION\" == 'Debug' ]]; then\n/usr/bin/perl -pe 's/(BUILD_NUMBER = )(\\d+)/$1.($2+1)/eg' -i \"$SRCROOT/Configurations/debug.xcconfig\"\nBUILD_NUMBER=`head -n 1 \"$SRCROOT/Configurations/debug.xcconfig\" | sed -e 's/BUILD_NUMBER = //'`\nPlistBuddy -c \"Set :CFBundleVersion $BUILD_NUMBER\" \"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\nPlistBuddy -c \"Set :CFBundleShortVersionString $VERSION_NUMBER\" \"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\n#PlistBuddy -c \"Set :SUFeedURL http:\\/\\/$SU_SITE/$SU_PATH/$SU_FEED\" \"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\n\n# Naming conventions\n#NAME\t\t= trailing file name\n#DIR\t\t= leading path components to a folder, no trailing slash\n#PATH\t\t= partial path component to construct URL or PATHNAME, no leading /\n#URL\t\t= $SITE/$DIR/$NAME\n#PATHNAME\t= full path to a file $DIR/$PATH/$FILE\n\n# Read back values to make sure they were set\nRELEASE_BUILD=$(defaults read \"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\" CFBundleVersion)\nRELEASE_VERSION=$(defaults read \"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\" CFBundleShortVersionString)\n\n# Bases\n#if [[ \"\" = \"$SU_PATH\" ]] ; then\n#SITE_BASE=\"http://${SU_SITE}\"\n#else\n#SITE_BASE=\"http://${SU_SITE}/${SU_PATH}\"\n#fi\n\n#UPDATES_BASE=\"$SRCROOT\"/updates\n\n#Paths\n#RELEASE_NOTES_PATH=\"support/releasenotes\"\n\n#Directories\n#RELEASE_NOTES_DIR=\"$UPDATES_BASE\"/\"$RELEASE_NOTES_PATH\"\n#KEYCHAIN_DIR=\"$SRCROOT/Misc\"\n\n# construct file names\n#ARCHIVE_FILE=`echo \"${PRODUCT_NAME}_${VERSION_NUMBER}_${RELEASE_BUILD}\" | tr \"-\" \"_\"`\n#RELEASE_NOTES=\"$ARCHIVE_FILE\".html\n\n#Files\n#KEYCHAIN_PRIVKEY_NAME=\"dsa_priv.pem\"\n#XML_UPDATE_FILE=\"$UPDATES_BASE\"/updates.xml\n#XML_CONFIG_FILE=\"$UPDATES_BASE\"/supportConfig.php\n\n# URL's\n#DOWNLOAD_BASE_URL=\"${SITE_BASE}/archives\"\n#RELEASENOTES_URL=\"${SITE_BASE}/$RELEASE_NOTES_PATH/$RELEASE_NOTES\"\n#DOWNLOAD_URL=\"$DOWNLOAD_BASE_URL/$ARCHIVE_FILE\"\n\n\n#WD=$PWD\n#pushd \"$BUILT_PRODUCTS_DIR\"\n#cp -R \"$PRODUCT_NAME\".app \"$ARCHIVE_FILE\".app\n#ditto -ck --keepParent \"$PRODUCT_NAME\".app \"$ARCHIVE_FILE\".zip\n#popd\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		750588F214577FFD00013A42 /* Sources */ = {
@@ -302,6 +327,7 @@
 /* Begin XCBuildConfiguration section */
 		7505891D14577FFE00013A42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75444FEB146AF9CD00460787 /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -330,6 +356,7 @@
 		};
 		7505891E14577FFE00013A42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75444FEB146AF9CD00460787 /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -353,6 +380,7 @@
 		};
 		7505892014577FFE00013A42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75444FEB146AF9CD00460787 /* debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrillSize/DrillSize-Prefix.pch";
@@ -369,6 +397,7 @@
 		};
 		7505892114577FFE00013A42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75444FEB146AF9CD00460787 /* debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrillSize/DrillSize-Prefix.pch";
@@ -385,6 +414,7 @@
 		};
 		75D083281459E5260094E89E /* Distribution */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75444FEB146AF9CD00460787 /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -409,6 +439,7 @@
 		};
 		75D083291459E5260094E89E /* Distribution */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75444FEB146AF9CD00460787 /* debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: polyMicro Systems";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -427,6 +458,7 @@
 		};
 		75D721BE14668CFF00D9CAE4 /* Release AdHoc */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75444FEB146AF9CD00460787 /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -450,6 +482,7 @@
 		};
 		75D721BF14668CFF00D9CAE4 /* Release AdHoc */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75444FEB146AF9CD00460787 /* debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: polyMicro Systems";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: polyMicro Systems";
