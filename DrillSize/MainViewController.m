@@ -219,10 +219,12 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 @synthesize sizePicker = _sizePicker;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize imagePopoverController = _imagePopoverController;
-@synthesize adBannerView;
 @synthesize mmInchButton;
 @synthesize mmSizeButton;
 @synthesize sixtyFoursOnly;
+@synthesize mainView;
+@synthesize adBannerView;
+@synthesize contentView;
 @synthesize drillsComponent;
 @synthesize valuesComponent;
 @synthesize metricsComponent;
@@ -272,12 +274,101 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 			  bottomAlignedAt:7];
 }
 
+-(void)createADBannerView
+{
+    // --- WARNING ---
+    // If you are planning on creating banner views at runtime in order to support iOS targets that don't support the iAd framework
+    // then you will need to modify this method to do runtime checks for the symbols provided by the iAd framework
+    // and you will need to weaklink iAd.framework in your project's target settings.
+    // See the iPad Programming Guide, Creating a Universal Application for more information.
+    // http://developer.apple.com/iphone/library/documentation/general/conceptual/iPadProgrammingGuide/Introduction/Introduction.html
+    // --- WARNING ---
+	
+    // Depending on our orientation when this method is called, we set our initial content size.
+    // If you only support portrait or landscape orientations, then you can remove this check and
+    // select either ADBannerContentSizeIdentifierPortrait (if portrait only) or ADBannerContentSizeIdentifierLandscape (if landscape only).
+	NSString *contentSize;
+	if (&ADBannerContentSizeIdentifierPortrait != nil)
+	{
+		contentSize = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? ADBannerContentSizeIdentifierPortrait : ADBannerContentSizeIdentifierLandscape;
+	}
+	else
+	{
+		// user the older sizes 
+		contentSize = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? ADBannerContentSizeIdentifier320x50 : ADBannerContentSizeIdentifier480x32;
+    }
+	
+    // Calculate the intial location for the banner.
+    // We want this banner to be at the bottom of the view controller, but placed
+    // offscreen to ensure that the user won't see the banner until its ready.
+    // We'll be informed when we have an ad to show because -bannerViewDidLoadAd: will be called.
+    CGRect frame;
+    frame.size = [ADBannerView sizeFromBannerContentSizeIdentifier:contentSize];
+    frame.origin = CGPointMake(0.0f, CGRectGetMaxY(self.view.bounds));
+    
+    // Now to create and configure the banner view
+    ADBannerView *bannerView = [[ADBannerView alloc] initWithFrame:frame];
+    // Set the delegate to self, so that we are notified of ad responses.
+    bannerView.delegate = self;
+    // Set the autoresizing mask so that the banner is pinned to the bottom
+    bannerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
+    // Since we support all orientations in this view controller, support portrait and landscape content sizes.
+    // If you only supported landscape or portrait, you could remove the other from this set.
+    
+	bannerView.requiredContentSizeIdentifiers = (&ADBannerContentSizeIdentifierPortrait != nil) ?
+	[NSSet setWithObjects:ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil] : 
+	[NSSet setWithObjects:ADBannerContentSizeIdentifier320x50, ADBannerContentSizeIdentifier480x32, nil];
+	
+    // At this point the ad banner is now be visible and looking for an ad.
+    [self.view addSubview:bannerView];
+    self.adBannerView = bannerView;
+}
+
+-(void)layoutForCurrentOrientation:(BOOL)animated
+{
+    CGFloat animationDuration = animated ? 0.2f : 0.0f;
+    // by default content consumes the entire view area
+    CGRect contentFrame = self.view.bounds;
+    // the banner still needs to be adjusted further, but this is a reasonable starting point
+    // the y value will need to be adjusted by the banner height to get the final position
+	CGPoint bannerOrigin = CGPointMake(CGRectGetMinX(contentFrame), CGRectGetMaxY(contentFrame));
+    CGFloat bannerHeight = 0.0f;
+    
+    // First, setup the banner's content size and adjustment based on the current orientation
+    if(UIInterfaceOrientationIsLandscape(self.interfaceOrientation))
+		adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+    else
+        adBannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait; 
+    bannerHeight = adBannerView.bounds.size.height; 
+	
+    // Depending on if the banner has been loaded, we adjust the content frame and banner location
+    // to accomodate the ad being on or off screen.
+    // This layout is for an ad at the bottom of the view.
+    if(adBannerView.bannerLoaded)
+    {
+        contentFrame.size.height -= bannerHeight;
+		bannerOrigin.y -= bannerHeight;
+    }
+    else
+    {
+		bannerOrigin.y += bannerHeight;
+    }
+    
+    // And finally animate the changes, running layout for the content view if required.
+    [UIView animateWithDuration:animationDuration
+                     animations:^{
+                         contentView.frame = contentFrame;
+                         [contentView layoutIfNeeded];
+                         adBannerView.frame = CGRectMake(bannerOrigin.x, bannerOrigin.y, adBannerView.frame.size.width, adBannerView.frame.size.height);
+                     }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NSArray *drillArray = [[NSArray alloc] initWithObjects:@"80", @"79", @"1/64", @"78", @"77", @"76", @"75", @"74", @"73", @"72", @"71", @"70", @"69", @"68", @"1/32", @"67", @"66", @"65", @"64", @"63", @"62", @"61", @"60", @"59", @"58", @"57", @"56", @"3/64", @"55", @"54", @"53", @"1/16", @"52", @"51", @"50", @"49", @"48", @"5/64", @"47", @"46", @"45", @"44", @"43", @"42", @"3/32", @"41", @"40", @"39", @"38", @"37", @"36", @"7/64", @"35", @"34", @"33", @"32", @"31", @"1/8", @"30", @"29", @"28", @"9/64", @"27", @"26", @"25", @"24", @"23", @"5/32", @"22", @"21", @"20", @"19", @"18", @"11/64", @"17", @"16", @"15", @"14", @"13", @"3/16", @"12", @"11", @"10", @"9", @"8", @"7", @"13/64", @"6", @"5", @"4", @"3", @"7/32", @"2", @"1", @"A", @"15/64", @"B", @"C", @"D", @"1/4", @"E", @"F", @"G", @"17/64", @"H", @"I", @"J", @"K", @"9/32", @"L", @"M", @"19/64", @"N", @"5/16", @"O", @"P", @"21/64", @"Q", @"R", @"11/32", @"S", @"T", @"23/64", @"U", @"3/8", @"V", @"W", @"25/64", @"X", @"Y", @"13/32", @"Z", @"27/64", @"7/16", @"29/64", @"15/32", @"31/64", @"1/2", @"33/64", @"17/32", @"35/64", @"9/16", @"37/64", @"19/32", @"39/64", @"5/8", @"41/64", @"21/32", @"43/64", @"11/16", @"45/64", @"23/32", @"47/64", @"3/4", @"49/64", @"25/32", @"51/64", @"13/16", @"53/64", @"27/32", @"55/64", @"7/8", @"57/64", @"29/32", @"59/64", @"15/16", @"61/64", @"31/32", @"63/64", nil];
 
-    NSDictionary *sizeDict = [NSDictionary dictionaryWithObjectsAndKeys:@".0135", @"80", @".0145", @"79", @".0160", @"78", @".0180", @"77", @".0200", @"76", @".0210", @"75", @".0225", @"74", @".0240", @"73", @".0250", @"72", @".0260", @"71", @".0280", @"70", @".0292", @"69", @".0310", @"68", @".0320", @"67", @".0330", @"66", @".0350", @"65", @".0360", @"64", @".0370", @"63", @".0380", @"62", @".0390", @"61", @".0400", @"60", @".0410", @"59", @".0420", @"58", @".0430", @"57", @".0465", @"56", @".0520", @"55", @".0550", @"54", @".0595", @"53", @".0635", @"52", @".0670", @"51", @".0700", @"50", @".0730", @"49", @".0760", @"48", @".0785", @"47", @".0810", @"46", @".0820", @"45", @".0860", @"44", @".0890", @"43", @".0935", @"42", @".0960", @"41", @".0980", @"40", @".0995", @"39", @".1015", @"38", @".1040", @"37", @".1065", @"36", @".1100", @"35", @".1110", @"34", @".1130", @"33", @".1160", @"32", @".1200", @"31", @".1285", @"30", @".1360", @"29", @".1405", @"28", @".1440", @"27", @".1470", @"26", @".1495", @"25", @".1520", @"24", @".1540", @"23", @".1570", @"22", @".1590", @"21", @".1610", @"20", @".1660", @"19", @".1695", @"18", @".1730", @"17", @".1770", @"16", @".1800", @"15", @".1820", @"14", @".1850", @"13", @".1890", @"12", @".1910", @"11", @".1935", @"10", @".1960", @"9", @".1990", @"8", @".2010", @"7", @".2040", @"6", @".2055", @"5", @".2090", @"4", @".2130", @"3", @".2210", @"2", @".2280", @"1", @".2340", @"A", @".2380", @"B", @".2420", @"C", @"2460", @"D", @".2500", @"E", @".2570", @"F", @".2610", @"G", @".2660", @"H", @".2720", @"I", @".2770", @"J", @".2810", @"K", @".2900", @"L", @".2950", @"M", @".3020", @"N", @".3160", @"O", @".3230", @"P", @".3320", @"Q", @".3390", @"R", @".3480", @"S", @".3580", @"T", @".3680", @"U", @".3770", @"V", @".3860", @"W", @".3970", @"X", @".4040", @"Y", @".4130", @"Z", nil];
+    NSDictionary *sizeDict = [NSDictionary dictionaryWithObjectsAndKeys:@".0135", @"80", @".0145", @"79", @".0160", @"78", @".0180", @"77", @".0200", @"76", @".0210", @"75", @".0225", @"74", @".0240", @"73", @".0250", @"72", @".0260", @"71", @".0280", @"70", @".0292", @"69", @".0310", @"68", @".0320", @"67", @".0330", @"66", @".0350", @"65", @".0360", @"64", @".0370", @"63", @".0380", @"62", @".0390", @"61", @".0400", @"60", @".0410", @"59", @".0420", @"58", @".0430", @"57", @".0465", @"56", @".0520", @"55", @".0550", @"54", @".0595", @"53", @".0635", @"52", @".0670", @"51", @".0700", @"50", @".0730", @"49", @".0760", @"48", @".0785", @"47", @".0810", @"46", @".0820", @"45", @".0860", @"44", @".0890", @"43", @".0935", @"42", @".0960", @"41", @".0980", @"40", @".0995", @"39", @".1015", @"38", @".1040", @"37", @".1065", @"36", @".1100", @"35", @".1110", @"34", @".1130", @"33", @".1160", @"32", @".1200", @"31", @".1285", @"30", @".1360", @"29", @".1405", @"28", @".1440", @"27", @".1470", @"26", @".1495", @"25", @".1520", @"24", @".1540", @"23", @".1570", @"22", @".1590", @"21", @".1610", @"20", @".1660", @"19", @".1695", @"18", @".1730", @"17", @".1770", @"16", @".1800", @"15", @".1820", @"14", @".1850", @"13", @".1890", @"12", @".1910", @"11", @".1935", @"10", @".1960", @"9", @".1990", @"8", @".2010", @"7", @".2040", @"6", @".2055", @"5", @".2090", @"4", @".2130", @"3", @".2210", @"2", @".2280", @"1", @".2340", @"A", @".2380", @"B", @".2420", @"C", @".2460", @"D", @".2500", @"E", @".2570", @"F", @".2610", @"G", @".2660", @"H", @".2720", @"I", @".2770", @"J", @".2810", @"K", @".2900", @"L", @".2950", @"M", @".3020", @"N", @".3160", @"O", @".3230", @"P", @".3320", @"Q", @".3390", @"R", @".3480", @"S", @".3580", @"T", @".3680", @"U", @".3770", @"V", @".3860", @"W", @".3970", @"X", @".4040", @"Y", @".4130", @"Z", nil];
     NSMutableArray *sizeStringArray = [NSMutableArray arrayWithCapacity:128];
     NSMutableArray *valueNumberArray = [NSMutableArray arrayWithCapacity:128];
     NSMutableArray *metricNumberArray = [NSMutableArray arrayWithCapacity:128];
@@ -325,16 +416,14 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     [self updateDecimalLabel];
     [self updateFractionLabel];
     [self updateMetricLabel];
-    self.bannerIsVisible = YES;
+	
+	if(adBannerView == nil)
+    {
+        [self createADBannerView];
+    }
+    [self layoutForCurrentOrientation:NO];
 
-    mmInchButton.layer.cornerRadius = 8;
-    mmInchButton.layer.masksToBounds = YES;
-//	[self.mmInchButton setButtonColor:[UIColor colorWithRed:160/255.0 green:170/255.0 blue:200/255.0 alpha:1.0]];
-
-
-    mmSizeButton.layer.cornerRadius = 8;
-    mmSizeButton.layer.masksToBounds = YES;
-//	[self.mmSizeButton setButtonColor:[UIColor colorWithRed:160/255.0 green:170/255.0 blue:200/255.0 alpha:1.0]];
+//	CGSize mainFrame = mainView.frame.size;
 }
 
 - (void)viewDidUnload {
@@ -343,6 +432,9 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     [self setMmInchButton:nil];
     [self setMmSizeButton:nil];
     [self setSixtyFoursOnly:nil];
+	[self setMainView:nil];
+	[self setAdBannerView:nil];
+	[self setContentView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -350,6 +442,7 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self layoutForCurrentOrientation:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -371,6 +464,11 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     } else {
         return NO;
     }
+}
+
+-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self layoutForCurrentOrientation:YES];
 }
 
 #pragma mark Picker Data Source Methods
@@ -589,9 +687,9 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
             }
             if (foundAIndex != -1) {
 				[self.sizePicker reloadAllComponents];
-                [_sizePicker selectRow:foundAIndex inComponent:0 animated:YES];
-                [_sizePicker selectRow:foundAIndex inComponent:1 animated:YES];
-                [_sizePicker selectRow:foundAIndex inComponent:2 animated:YES];
+                [_sizePicker selectRow:foundAIndex inComponent:0 animated:NO];
+                [_sizePicker selectRow:foundAIndex inComponent:1 animated:NO];
+                [_sizePicker selectRow:foundAIndex inComponent:2 animated:NO];
 				[self.sizePicker reloadAllComponents];
             }
         }
@@ -610,17 +708,19 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
         }
         if (foundAIndex != -1) {
 			[self.sizePicker reloadAllComponents];
-            [_sizePicker selectRow:foundAIndex inComponent:0 animated:YES];
-            [_sizePicker selectRow:foundAIndex inComponent:1 animated:YES];
-            [_sizePicker selectRow:foundAIndex inComponent:2 animated:YES];
+            [_sizePicker selectRow:foundAIndex inComponent:0 animated:NO];
+            [_sizePicker selectRow:foundAIndex inComponent:1 animated:NO];
+            [_sizePicker selectRow:foundAIndex inComponent:2 animated:NO];
 			[self.sizePicker reloadAllComponents];
         }
     }
     //NSLog(@"------------------------");
 }
 
-#pragma mark - Banner Delegate
+#pragma mark ADBannerViewDelegate methods
+
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    [self layoutForCurrentOrientation:YES];
     if (!self.bannerIsVisible) {
         [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
         // Assumes the banner view is just off the bottom of the screen.
@@ -631,14 +731,16 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-    if (self.bannerIsVisible) {
+    if (!self.bannerIsVisible) {
         [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
         // Assumes the banner view is placed at the bottom of the screen.
         banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
         [UIView commitAnimations];
         self.bannerIsVisible = NO;
-        [TestFlight passCheckpoint:@"iAd Banner Failed"];
+		[self layoutForCurrentOrientation:YES];
+		
     }
+	[TestFlight passCheckpoint:@"iAd Banner Failed"];
 }
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
@@ -649,4 +751,9 @@ static NSInteger compareViews(UIView *a, UIView *b, void *context) {
     }
     return shouldExecuteAction;
 }
+
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner
+{
+}
+
 @end

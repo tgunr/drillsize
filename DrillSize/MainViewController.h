@@ -53,10 +53,12 @@
 @property(weak, nonatomic) IBOutlet UIPickerView *sizePicker;
 @property(strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property(strong, nonatomic) UIPopoverController *imagePopoverController;
-@property(weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 @property(weak, nonatomic) IBOutlet GradientButton *mmInchButton;
 @property(weak, nonatomic) IBOutlet GradientButton *mmSizeButton;
 @property(weak, nonatomic) IBOutlet UISwitch *sixtyFoursOnly;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property(weak, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 
 @property(copy) NSArray *drillsComponent;
 @property(copy) NSArray *valuesComponent;
