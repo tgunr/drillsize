@@ -20,6 +20,12 @@
 		7505891C14577FFE00013A42 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7505891B14577FFE00013A42 /* ImageViewController.m */; };
 		75444FED146AF9CD00460787 /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 75444FEB146AF9CD00460787 /* debug.xcconfig */; };
 		75444FEE146AF9CD00460787 /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 75444FEC146AF9CD00460787 /* release.xcconfig */; };
+		7572069A146B54FA00381D79 /* metal.png in Resources */ = {isa = PBXBuildFile; fileRef = 75720699146B54FA00381D79 /* metal.png */; };
+		7572069C146B583800381D79 /* LaunchPix-114X114.png in Resources */ = {isa = PBXBuildFile; fileRef = 7572069B146B583800381D79 /* LaunchPix-114X114.png */; };
+		7572069E146B583E00381D79 /* LaunchPix-57X57.png in Resources */ = {isa = PBXBuildFile; fileRef = 7572069D146B583E00381D79 /* LaunchPix-57X57.png */; };
+		757206A5146B5F5500381D79 /* mm-inch-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 757206A3146B5F5500381D79 /* mm-inch-btn.png */; };
+		757206A6146B5F5500381D79 /* mm-size-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 757206A4146B5F5500381D79 /* mm-size-btn.png */; };
+		757206A8146B657700381D79 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 757206A7146B657700381D79 /* background.png */; };
 		757FF8DD145E7A6D001D3F78 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */; };
 		7599C5011466EF1F00B50B09 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7599C4FD1466EF1F00B50B09 /* libTestFlight.a */; };
 		7599C5021466EF2000B50B09 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7599C4FE1466EF1F00B50B09 /* README.txt */; };
@@ -59,6 +65,12 @@
 		7505891B14577FFE00013A42 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		75444FEB146AF9CD00460787 /* debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = Configurations/debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		75444FEC146AF9CD00460787 /* release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = release.xcconfig; path = Configurations/release.xcconfig; sourceTree = SOURCE_ROOT; };
+		75720699146B54FA00381D79 /* metal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = metal.png; path = Resources/metal.png; sourceTree = "<group>"; };
+		7572069B146B583800381D79 /* LaunchPix-114X114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchPix-114X114.png"; path = "../LaunchPix-114X114.png"; sourceTree = "<group>"; };
+		7572069D146B583E00381D79 /* LaunchPix-57X57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchPix-57X57.png"; path = "../LaunchPix-57X57.png"; sourceTree = "<group>"; };
+		757206A3146B5F5500381D79 /* mm-inch-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mm-inch-btn.png"; path = "Resources/mm-inch-btn.png"; sourceTree = "<group>"; };
+		757206A4146B5F5500381D79 /* mm-size-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mm-size-btn.png"; path = "Resources/mm-size-btn.png"; sourceTree = "<group>"; };
+		757206A7146B657700381D79 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/background.png; sourceTree = "<group>"; };
 		757FF8DC145E7A6D001D3F78 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7599C4FD1466EF1F00B50B09 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		7599C4FE1466EF1F00B50B09 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -186,6 +198,12 @@
 		75D721481465AB1800D9CAE4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				757206A7146B657700381D79 /* background.png */,
+				7572069D146B583E00381D79 /* LaunchPix-57X57.png */,
+				7572069B146B583800381D79 /* LaunchPix-114X114.png */,
+				757206A3146B5F5500381D79 /* mm-inch-btn.png */,
+				757206A4146B5F5500381D79 /* mm-size-btn.png */,
+				75720699146B54FA00381D79 /* metal.png */,
 				75D721611465AE4300D9CAE4 /* bit-114X114.png */,
 				75D7215F1465AE3900D9CAE4 /* bit-57X57.png */,
 				75D7215D1465AE2C00D9CAE4 /* Default.png */,
@@ -265,6 +283,12 @@
 				7599C5031466EF2000B50B09 /* release_notes.txt in Resources */,
 				75444FED146AF9CD00460787 /* debug.xcconfig in Resources */,
 				75444FEE146AF9CD00460787 /* release.xcconfig in Resources */,
+				7572069A146B54FA00381D79 /* metal.png in Resources */,
+				7572069C146B583800381D79 /* LaunchPix-114X114.png in Resources */,
+				7572069E146B583E00381D79 /* LaunchPix-57X57.png in Resources */,
+				757206A5146B5F5500381D79 /* mm-inch-btn.png in Resources */,
+				757206A6146B5F5500381D79 /* mm-size-btn.png in Resources */,
+				757206A8146B657700381D79 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +488,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: polyMicro Systems";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: polyMicro Systems";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -473,7 +497,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "0AD5DC0E-E9C1-4407-8C2F-89DE6A8A45BA";
+				PROVISIONING_PROFILE = "4DCBA1FD-F288-4340-A431-CFB501369149";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4DCBA1FD-F288-4340-A431-CFB501369149";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -494,8 +519,8 @@
 					"\"$(SRCROOT)/../SDK/TestFlightSDK0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "516FC992-4696-4EB5-A698-23DA4AF6498A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "516FC992-4696-4EB5-A698-23DA4AF6498A";
+				PROVISIONING_PROFILE = "4DCBA1FD-F288-4340-A431-CFB501369149";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4DCBA1FD-F288-4340-A431-CFB501369149";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
