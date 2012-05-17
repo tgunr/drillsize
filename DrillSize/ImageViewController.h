@@ -21,9 +21,11 @@
 @property (weak, nonatomic) IBOutlet id <ImageViewControllerDelegate> delegate;
 @property (strong) MainViewController *mainViewController;
 @property (weak, nonatomic) IBOutlet GradientButton *feedBackButton;
+@property (strong, nonatomic) IBOutlet UIButton *visitButton;
 
 - (IBAction)done:(id)sender;
 - (IBAction)feedBack:(id)sender;
+- (IBAction)visitWebsite:(id)sender;
 
 @end
 

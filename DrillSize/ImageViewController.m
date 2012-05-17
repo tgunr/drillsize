@@ -14,6 +14,7 @@
 @synthesize delegate;
 @synthesize mainViewController;
 @synthesize feedBackButton;
+@synthesize visitButton;
 
 - (void)awakeFromNib
 {
@@ -39,6 +40,7 @@
 - (void)viewDidUnload
 {
 	[self setFeedBackButton:nil];
+    [self setVisitButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -85,6 +87,10 @@
 
 - (IBAction)feedBack:(id)sender {
 	[TestFlight openFeedbackView];
+}
+
+- (IBAction)visitWebsite:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://polymicrosystems.com"]]; 
 }
 
 @end
