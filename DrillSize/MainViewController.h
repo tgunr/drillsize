@@ -47,6 +47,8 @@
 #define kValues 1
 #define kMetrics 2
 
+@class UIImageView;
+
 @interface MainViewController : UIViewController <ImageViewControllerDelegate, UIPopoverControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIVideoEditorControllerDelegate, ADBannerViewDelegate> {
 }
 @property(nonatomic) BOOL bannerIsVisible;
@@ -59,6 +61,7 @@
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property(weak, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
+@property(weak, nonatomic) IBOutlet UISwitch *testSwitch;
 
 @property(copy) NSArray *drillsComponent;
 @property(copy) NSArray *valuesComponent;
@@ -71,6 +74,7 @@
 - (IBAction)togglePopover:(id)sender;
 
 - (IBAction)sixtyFoursChanged:(id)sender;
+- (IBAction)toggleTest:(id)sender;
 @end
 
 

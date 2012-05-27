@@ -3,7 +3,7 @@
 //  DrillSize
 //
 //  Created by Dave Carlton on 10/25/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 PolyMicro Systems. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -22,7 +22,7 @@
     // Override point for customization after application launch.
 	MainViewController *controller = (MainViewController *)self.window.rootViewController;
 	controller.managedObjectContext = self.managedObjectContext;
-	[TestFlight takeOff:@"c92a6bb6a055a85b16708ed7d084302b_MzkwODkyMDExLTExLTA2IDA5OjE5OjIwLjA2NDQ3OA"];
+//	[TestFlight takeOff:@"c92a6bb6a055a85b16708ed7d084302b_MzkwODkyMDExLTExLTA2IDA5OjE5OjIwLjA2NDQ3OA"];
     return YES;
 }
 							

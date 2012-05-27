@@ -1,5 +1,0 @@
-BUILD_NUMBER = 682
-VERSION_NUMBER = 3.1.3
-SU_SITE = updates.pdfgarden.com
-SU_PATH = 
-SU_FEED = updateInfo.php
